@@ -2,19 +2,60 @@
 "use client";
 import type { NextPage } from "next";
 import React, { useEffect, useRef, useState } from "react";
+import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
 import { motion, useAnimation } from "framer-motion";
 import { cn } from "../../app/utils/cn";
 import { SparklesCore } from "../ui/sparkles";
 
+
 export const BackgroundCellAnimation = () => {
+
+  const words = [
+    {
+      text: "Build",
+      className: "text-black dark:text-blue-500",
+    },
+    {
+      text: "awesome",
+      className: "text-black dark:text-blue-500",
+    },
+    {
+      text: "apps",
+      className: "text-black dark:text-blue-500",
+    },
+    {
+      text: "with",
+      className: "text-black dark:text-blue-500",
+    },
+    {
+      text: "Aceternity.",
+      className: "text-blue-500 dark:text-blue-500",
+    },
+  ];
 return (
-  <div className="relative h-screen bg-slate-950 flex justify-center overflow-hidden">
+  <div className="relative h-screen bg-white flex justify-center overflow-hidden">
     <BackgroundCellCore />
     <div className="relative z-50 mt-40 pointer-events-none select-none">
-      <h1 className="md:text-2xl lg:text-7xl font-medium text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400 pointer-events-none">
-        Background cell animation <br />
-        with framer motion
-      </h1>
+    <div className="flex flex-col items-center justify-center h-[20rem]  ">
+      <p className="text-black dark:text-neutral-200 text-xs sm:text-base  ">
+        The road to freedom starts from here
+      </p>
+      <TypewriterEffectSmooth words={words} />
+      <motion.button 
+      initial ={{opacity :0.5, scale: 0.8}}
+      whileInView={{opacity:1 , scale:1}}
+      transition={{
+        delay:0.5,
+        duration:0.8,
+        ease:"easeInOut"
+      }}
+       className=" p-6 mt-8 mb-8 md:mb-0 text-2xl w-full sm:w-fit border-t-4 rounded-full border-[#51ddf9] bg-[#131313] hover:bg-white group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-neutral-500 duration-500"
+      ><span className=" bg-clip-text text-transparent bg-gradient-to-r from-neutral-400  to-neutral-800 md:text-center font-sans group-hover:bg-gradient-to-r group-hover:from-black group-hover:to-black">
+        Start For Free
+      </span>
+
+      </motion.button>
+    </div>
       <div className="w-[100rem] h-40 relative">
         {/* Gradients */}
         <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-full blur-sm" />
@@ -23,18 +64,8 @@ return (
         <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
  
         
-        {/* Core component */}
-        <SparklesCore
-          background="#020617"
-          minSize={1.9}
-          maxSize={1}
-          particleDensity={1700}
-          className="w-full h-full "
-          particleColor="#FFFFFF"
-        />
- 
-        {/* Radial Gradient to prevent sharp edges */}
-        <div className="absolute inset-0 w-full h-full bg-slate-950 [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+       
+        
       </div>
     </div>
 
@@ -63,7 +94,7 @@ return (
     className="h-full absolute inset-0"
   >
     <div className="absolute h-[20rem] inset-y-0  overflow-hidden">
-      <div className="absolute h-full w-full pointer-events-none -bottom-2 z-40 bg-slate-950 [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
+      <div className="absolute h-full w-full pointer-events-none -bottom-2 z-40 bg-white [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
       <div
         className="absolute inset-0 z-20 bg-transparent"
         style={{
