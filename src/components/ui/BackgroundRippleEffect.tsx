@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { cn } from "../../app/utils/cn";
+import { SparklesCore } from "../ui/sparkles";
 
 export const BackgroundCellAnimation = () => {
 return (
@@ -14,7 +15,24 @@ return (
         Background cell animation <br />
         with framer motion
       </h1>
+      <div className="w-[40rem] h-40 relative">
+        {/* Gradients */}
+        
+        {/* Core component */}
+        <SparklesCore
+          background="#020617"
+          minSize={1.9}
+          maxSize={1}
+          particleDensity={1700}
+          className="w-full h-full "
+          particleColor="#FFFFFF"
+        />
+ 
+        {/* Radial Gradient to prevent sharp edges */}
+        <div className="absolute inset-0 w-full h-full bg-slate-950 [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+      </div>
     </div>
+
   </div>
 );
 };
