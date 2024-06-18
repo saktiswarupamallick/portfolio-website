@@ -109,7 +109,7 @@ const Pattern = ({
               <div
                 key={`matrix-col-${colIdx}`}
                 className={cn(
-                  "bg-transparent border-l border-b border-neutral-600",
+                  "bg-transparent border-l border-b border-neutral-900",
                   cellClassName
                 )}
                 onClick={() => setClickedCell([rowIdx, colIdx])}
@@ -126,7 +126,7 @@ const Pattern = ({
                     ease: "backOut",
                   }}
                   animate={controls}
-                 className="bg-cyan-500 h-12 w-12" //  rgba(14, 165, 233, 0.15) for a more subtle effect
+                 className="bg-cyan-600 h-12 w-12" //  rgba(14, 165, 233, 0.15) for a more subtle effect
                 ></motion.div>
               </div>
             );
