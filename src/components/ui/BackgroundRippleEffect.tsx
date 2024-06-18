@@ -126,7 +126,7 @@ const Pattern = ({
                     ease: "backOut",
                   }}
                   animate={controls}
-                 className="bg-[rgba(14,165,233,0.3)] h-12 w-12" //  rgba(14, 165, 233, 0.15) for a more subtle effect
+                 className="bg-cyan-500 h-12 w-12" //  rgba(14, 165, 233, 0.15) for a more subtle effect
                 ></motion.div>
               </div>
             );
