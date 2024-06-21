@@ -12,23 +12,47 @@ export const BackgroundCellAnimation = () => {
 
   const words = [
     {
-      text: "Build",
+      text: "Innovating",
       className: "text-black dark:text-blue-500",
     },
     {
-      text: "awesome",
+      text: "the",
       className: "text-black dark:text-blue-500",
     },
     {
-      text: "apps",
+      text: "Future",
       className: "text-black dark:text-blue-500",
     },
     {
-      text: "with",
+      text: "of",
       className: "text-black dark:text-blue-500",
     },
     {
-      text: "Aceternity.",
+      text: "Software",
+      className: "text-black dark:text-blue-500",
+    },
+    {
+      text: "Development",
+      className: "text-blue-500 dark:text-blue-500",
+    },
+    
+  ];
+  const word = [
+    {
+      text: "Innovating",
+      className: "text-black dark:text-blue-500",
+    },
+    {
+      text: "the",
+      className: "text-black dark:text-blue-500",
+    },
+    {
+      text: "Future",
+      className: "text-black dark:text-blue-500",
+    },
+   
+    {
+      text: "Development",
       className: "text-blue-500 dark:text-blue-500",
     },
   ];
@@ -36,11 +60,12 @@ return (
   <div className="relative h-screen bg-white flex justify-center overflow-hidden">
     <BackgroundCellCore />
     <div className="relative z-50 mt-40 pointer-events-none select-none">
-    <div className="flex flex-col items-center justify-center h-[20rem]  ">
-      <p className="text-black dark:text-neutral-200 text-xs sm:text-base  ">
-        The road to freedom starts from here
+    <div className="flex flex-col items-center justify-center h-[30rem]  ">
+      <p className="text-black dark:text-neutral-200 xl:text-3xl sm:text-base  ">
+      Leveraging Cutting-Edge Technologies to Build Tomorrow’s Solutions
       </p>
       <TypewriterEffectSmooth words={words} />
+      <TypewriterEffectSmooth words={word} className="mt-[-20px]" />
       <motion.button 
       initial ={{opacity :0.5, scale: 0.8}}
       whileInView={{opacity:1 , scale:1}}
@@ -56,17 +81,7 @@ return (
 
       </motion.button>
     </div>
-      <div className="w-[100rem] h-40 relative">
-        {/* Gradients */}
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-full blur-sm" />
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-full" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
- 
-        
-       
-        
-      </div>
+      
     </div>
 
   </div>
@@ -93,7 +108,7 @@ return (
     onMouseMove={handleMouseMove}
     className="h-full absolute inset-0"
   >
-    <div className="absolute h-[20rem] inset-y-0  overflow-hidden">
+    <div className="absolute h-[30rem] inset-y-0  overflow-hidden">
       <div className="absolute h-full w-full pointer-events-none -bottom-2 z-40 bg-white [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
       <div
         className="absolute inset-0 z-20 bg-transparent"
