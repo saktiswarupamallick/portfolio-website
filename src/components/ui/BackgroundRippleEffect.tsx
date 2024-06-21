@@ -60,7 +60,7 @@ const BackgroundCellCore = () => {
         >
           <Pattern cellClassName="border-cyan-900 relative z-[100]" />
         </div>
-        <Pattern className="opacity-[0.4]" cellClassName="border-cyan-900" />
+        <Pattern className="opacity-[0.4]" cellClassName="border-cyan-400" />
       </div>
     </div>
   );
