@@ -9,14 +9,14 @@ export const BackgroundCellAnimation: NextPage = () => {
     <div className="relative h-screen bg-white flex justify-center items-center overflow-hidden">
       <BackgroundCellCore />
       <div className="relative z-50 pointer-events-none select-none text-center">
-        <h1 className="md:text-2xl lg:text-7xl font-medium bg-clip-text text-bold text-transparent bg-gradient-to-r from-purple-500 to-cyan-500">
+        <h1 className="md:text-2xl lg:text-7xl font-bold bg-clip-text text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
           Welcome to My Portfolio
         </h1>
         <h2 className="mt-4 md:text-xl lg:text-4xl text-black-500">
           Creating Innovative and Scalable Solutions <br />
           for the Modern Web and Beyond
         </h2>
-        <button className="mt-8 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+        <button className="mt-8 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300">
           Get Started
         </button>
       </div>
