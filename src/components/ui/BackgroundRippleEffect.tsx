@@ -6,18 +6,18 @@ import { cn } from "../../app/utils/cn";
 
 export const BackgroundCellAnimation: NextPage = () => {
   return (
-    <div className="relative h-screen bg-white flex justify-center items-center overflow-hidden">
+    <div className="relative h-[660px] bg-white flex justify-center items-center overflow-hidden">
       <BackgroundCellCore />
       <div className="relative z-50 pointer-events-none select-none text-center">
         <h1 className="md:text-2xl lg:text-7xl font-bold bg-clip-text text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-          Welcome to My Portfolio
+          Looking for a Developer
         </h1>
         <h2 className="mt-4 md:text-xl lg:text-4xl text-black-500">
-          Creating Innovative and Scalable Solutions <br />
-          for the Modern Web and Beyond
+          who can bring your imagination <br />
+          into Reality
         </h2>
         <button className="mt-8 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300">
-          Get Started
+          Hire Me
         </button>
       </div>
     </div>
