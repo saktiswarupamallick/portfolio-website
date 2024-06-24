@@ -19,7 +19,7 @@ export default function Home() {
       < NavbarDemo />
       < BackgroundCellAnimation />
       < HeroHighlightDemo />
-      < PlaceholdersAndVanishInputDemo />
+   
       <Youtube />
       <Youtubesec />
       < InfiniteMovingCardsDemo />
