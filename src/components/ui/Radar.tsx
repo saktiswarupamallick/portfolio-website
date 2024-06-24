@@ -20,7 +20,7 @@ export const Radar = ({ className }: any) => {
         overflow-hidden animate-radar-spin w-[400px]  items-end justify-center bg-transparent"
       >
       {/* Radar line that rotates */}
-        <div className="relative z-40 h-[1px] w-full bg-gradient-to-r from-transparent  via-sky-600 to-transparent" />
+        <div className="relative z-40 h-[1px] w-full bg-gradient-to-r from-indigo-300 to-purple-300" />
       </div>
       {/* concentric circles */}
       {circles.map((circle, idx) => (

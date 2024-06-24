@@ -9,6 +9,7 @@ import Youtube from "@/components/youtube";
 import Youtubesec from "@/components/youtubesec";
 import { InfiniteMovingCardsDemo } from "@/components/ui/infinite-moving-cards";
 import { PlaceholdersAndVanishInputDemo } from "@/components/ui/placeholders-and-vanish-input";
+import { Preview } from "@/components/ui/Preview";
 
 
 
@@ -19,7 +20,7 @@ export default function Home() {
       < NavbarDemo />
       < BackgroundCellAnimation />
       < HeroHighlightDemo />
-   
+      <Preview />
       <Youtube />
       <Youtubesec />
       < InfiniteMovingCardsDemo />

@@ -76,12 +76,21 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "radar-spin": {
+          from: {
+            transform: "rotate(20deg)",
+          },
+          to: {
+            transform: "rotate(380deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         scroll:
         "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        "radar-spin": "radar-spin 10s linear infinite",
       },
     },
   },
