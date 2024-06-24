@@ -3,11 +3,18 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 
-
-
 export function InfiniteMovingCardsDemo() {
   return (
     <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <div className="text-sm font-bold bg-cyan-50 mb-4 text-center rounded-full border border-t p-2 px-10 ">
+        Testimonials
+      </div>
+      <h1 className="text-4xl font-bold mb-8 text-center">
+        <span className="block">Inspiring</span>
+        <span className="block">
+          <span className="text-blue-500">Words</span> from Literary Legends
+        </span>
+      </h1>
       <InfiniteMovingCards
         items={testimonials}
         direction="right"
@@ -48,7 +55,6 @@ const testimonials = [
     title: "Moby-Dick",
   },
 ];
-
 
 export const InfiniteMovingCards = ({
   items,
