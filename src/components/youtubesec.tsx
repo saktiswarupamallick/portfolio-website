@@ -2,7 +2,7 @@ import React from 'react';
 
 const BigImageSection: React.FC = () => {
   return (
-    <section className="h-full rounded-lg flex flex-col justify-center items-center pb-24 bg-gradient-to-r from-indigo-500 to-purple-500">
+    <section className="h-full rounded-lg mx-24 flex flex-col justify-center items-center pb-24 bg-gradient-to-r from-indigo-500 to-purple-500">
       <div className="flex justify-center items-center mx-auto border-4 border-purple-900 mt-[-120px] border-gray-300 rounded-lg shadow-lg overflow-hidden">
         {/* Set a max-width for the iframe container */}
         <div className="max-w-screen-lg w-full">
