@@ -27,7 +27,7 @@ export const IconContainer = ({ imgSrc, text, delay }: any) => {
     >
       <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-inner">
         {imgSrc ? (
-          <Image src={imgSrc} alt={text} width={32} height={32} />
+          <Image src={imgSrc} alt={text} width={50} height={38} />
         ) : (
           <HiDocumentText className="h-8 w-8 text-slate-600" />
         )}
