@@ -30,7 +30,7 @@ export function HeroHighlightDemo() {
   }, []);
 
   return (
-    <HeroHighlight className="mt-[-200px] pb-40 w-full">
+    <HeroHighlight className="mt-[-200px] pb-24 w-full">
       <motion.div
         ref={sectionRef}
         initial={{
@@ -42,9 +42,9 @@ export function HeroHighlightDemo() {
           duration: 0.5,
           ease: [0.4, 0.0, 0.2, 1],
         }}
-        className="flex flex-col md:flex-row items-center justify-center text-center md:text-left max-w-4xl mx-auto"
+        className="flex flex-col md:flex-row items-center justify-center text-center md:text-left px-4 md:px-8 lg:px-16 w-full"
       >
-        <div className="md:w-2/3 px-4">
+        <div className="md:w-2/3">
           <motion.h1
             initial={{
               opacity: 0,
@@ -57,13 +57,10 @@ export function HeroHighlightDemo() {
             }}
             className="text-2xl md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white leading-relaxed lg:leading-snug"
           >
-            Crafting Solutions with{" "}
-            <Highlight className="text-black dark:text-white">
-              Code and Creativity
-            </Highlight>
+            Why Choose Me?
           </motion.h1>
           <p className="mt-4 text-lg md:text-xl lg:text-2xl text-neutral-700 dark:text-white">
-            Hello! I'm a passionate Software Development Engineer with a knack for creating efficient, scalable, and user-friendly applications. With a strong foundation in computer science and a love for continuous learning, I thrive in collaborative environments where innovation meets practicality.
+            As a proficient <Highlight>MERN stack developer</Highlight> and skilled <Highlight>UI/UX designer</Highlight>, I bring a wealth of experience in crafting intuitive, visually appealing digital solutions. Additionally, my passion for teaching and sharing knowledge as a <Highlight>YouTube educator</Highlight> ensures that I not only build exceptional products but also empower others through education.
           </p>
         </div>
         <div className="md:w-1/3 mt-8 md:mt-0 md:ml-8 flex justify-center md:justify-end">
@@ -133,7 +130,7 @@ export const HeroHighlight = ({
           `,
         }}
       />
-      <div className={cn("relative z-20", className)}>{children}</div>
+      <div className={cn("relative z-20 w-full", className)}>{children}</div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { cn } from "../../app/utils/cn";
 
 export const BackgroundCellAnimation: NextPage = () => {
   return (
-    <div className="relative h-[660px] bg-white flex justify-center items-center overflow-hidden">
+    <div className="relative h-[660px] bg-white mb-20 flex justify-center items-center overflow-hidden">
       <BackgroundCellCore />
       <div className="relative z-50 pointer-events-none select-none text-center">
         <h1 className="md:text-2xl lg:text-7xl font-bold bg-clip-text text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">

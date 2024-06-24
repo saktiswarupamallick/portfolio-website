@@ -1,21 +1,19 @@
-// components/BigImageSection.tsx
-
 import React from 'react';
 
-const Youtubesec: React.FC = () => {
+const BigImageSection: React.FC = () => {
   return (
-    <section className="h-full flex flex-col justify-center items-center pb-24 bg-blue-50">
-      <div className="border mt-[-120px] border-gray-300 rounded-lg shadow-lg">
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" rel="noopener noreferrer">
-          <iframe width="800" height="400" src="https://www.youtube.com/embed/zzRw3hvtWNY?si=STaGo3LetDLVoWkz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </a>
+    <section className="h-full rounded-lg flex flex-col justify-center items-center pb-24 bg-gradient-to-r from-indigo-500 to-purple-500">
+      <div className="flex justify-center items-center mx-auto border-4 border-purple-900 mt-[-120px] border-gray-300 rounded-lg shadow-lg overflow-hidden">
+        {/* Set a max-width for the iframe container */}
+        <div className="max-w-screen-lg w-full">
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/zzRw3hvtWNY?si=J8KlX1a_bcN34zFH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
       </div>
-      <button className="px-16 py-3 bg-yellow-500 text-white mt-10 rounded hover:bg-yellow-500">
+      <button className="px-8 sm:px-16 py-3 bg-black rounded-xl text-white mt-6 sm:mt-10 rounded hover:bg-yellow-500">
         Get Started <span className="ml-2">&#8594;</span>
       </button>
     </section>
   );
 };
 
-export default Youtubesec;
+export default BigImageSection;
