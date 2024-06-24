@@ -19,7 +19,7 @@ export default function Home() {
     <main >
 
       < NavbarDemo />
-      <div className="absolute z-[0] w-[80%] h-[60%] -right-[50%] rounded-full pink__gradient top-40" />
+      <div className="absolute z-[0] w-[80%] h-[60%] - rounded-full pink__gradient top-40" />
       < BackgroundCellAnimation />
       < HeroHighlightDemo />
       <Preview />

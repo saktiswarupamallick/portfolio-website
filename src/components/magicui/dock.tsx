@@ -5,15 +5,15 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import React, { PropsWithChildren, useRef } from "react";
 
 
+
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export function DockDemo() {
   return (
     
-      
       <Dock>
         <DockIcon>
-          <Icons.gitHub className="h-8 w-8" />
+          <Icons.gitHub className="h-6 w-6" />
         </DockIcon>
         <DockIcon>
           <Icons.googleDrive className="h-6 w-6" />
@@ -28,7 +28,7 @@ export function DockDemo() {
           <Icons.whatsapp className="h-6 w-6" />
         </DockIcon>
       </Dock>
-    
+  
   );
 }
 
@@ -150,21 +150,21 @@ const Icons = {
   ),
 };
 
- 
+
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
   magnification?: number;
   distance?: number;
   children: React.ReactNode;
 }
- 
+
 const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
- 
+
 const dockVariants = cva(
-  "  mt-8 h-[58px] p-2 flex items-end gap-2 rounded-2xl ",
+  "mx-auto w-max mt-8 h-[58px] p-2 flex items-end gap-2 rounded-2xl ",
 );
- 
+
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(
   (
     {
@@ -177,7 +177,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     ref,
   ) => {
     const mouseX = useMotionValue(Infinity);
- 
+
     const renderChildren = () => {
       return React.Children.map(children, (child: any) => {
         return React.cloneElement(child, {
@@ -187,7 +187,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
         });
       });
     };
- 
+
     return (
       <motion.div
         ref={ref}
@@ -201,9 +201,9 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     );
   },
 );
- 
+
 Dock.displayName = "Dock";
- 
+
 export interface DockIconProps {
   size?: number;
   magnification?: number;
@@ -213,7 +213,7 @@ export interface DockIconProps {
   children?: React.ReactNode;
   props?: PropsWithChildren;
 }
- 
+
 const DockIcon = ({
   size,
   magnification = DEFAULT_MAGNIFICATION,
@@ -224,25 +224,25 @@ const DockIcon = ({
   ...props
 }: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
- 
+
   const distanceCalc = useTransform(mouseX, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
- 
+
     return val - bounds.x - bounds.width / 2;
   });
- 
+
   let widthSync = useTransform(
     distanceCalc,
     [-distance, 0, distance],
     [40, magnification, 40],
   );
- 
+
   let width = useSpring(widthSync, {
     mass: 0.1,
     stiffness: 150,
     damping: 12,
   });
- 
+
   return (
     <motion.div
       ref={ref}
@@ -257,7 +257,7 @@ const DockIcon = ({
     </motion.div>
   );
 };
- 
+
 DockIcon.displayName = "DockIcon";
- 
+
 export { Dock, DockIcon, dockVariants };

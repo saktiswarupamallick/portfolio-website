@@ -9,7 +9,7 @@ export const BackgroundCellAnimation: NextPage = () => {
     <div className="relative h-[660px] bg-white mb-20 flex justify-center items-center overflow-hidden">
       <BackgroundCellCore />
       <div className="relative z-50 pointer-events-none select-none text-center">
-        <h1 className="md:text-2xl lg:text-7xl font-bold bg-clip-text text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
+        <h1 className="md:text-2xl lg:text-7xl poppins-bold font-bold bg-clip-text text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
           Looking for a Developer
         </h1>
         <h2 className="mt-4 md:text-xl lg:text-4xl text-black-500">
@@ -114,11 +114,11 @@ const Pattern = ({
                   initial={{ opacity: 0 }}
                   whileHover={{
                     opacity: [0, 1, 0.5],
-                    backgroundColor: "#036666", // Dark cyan color
+                    backgroundColor: "#fc67fa", // Dark cyan color
                   }}
                   transition={{ duration: 0.5, ease: "backOut" }}
                   animate={controls}
-                  className="bg-[rgba(14,165,233,0.3)] h-12 w-12"
+                  className="bg-purple-800 h-12 w-12"
                 ></motion.div>
               </div>
             );
