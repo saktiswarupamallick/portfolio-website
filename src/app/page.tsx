@@ -17,13 +17,16 @@ import { Preview } from "@/components/ui/Preview";
 export default function Home() {
   return (
     <main >
+
       < NavbarDemo />
+      <div className="absolute z-[0] w-[80%] h-[60%] -right-[50%] rounded-full pink__gradient top-40" />
       < BackgroundCellAnimation />
       < HeroHighlightDemo />
       <Preview />
       <Youtube />
       <Youtubesec />
       < InfiniteMovingCardsDemo />
+      <PlaceholdersAndVanishInputDemo />
 
       
     </main>

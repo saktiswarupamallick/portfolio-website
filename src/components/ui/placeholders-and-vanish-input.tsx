@@ -1,10 +1,7 @@
 "use client";
-
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "../../app/utils/cn";
-import BigImageSection from "../youtubesec";
-
 
 export function PlaceholdersAndVanishInputDemo() {
   const placeholders = [
@@ -23,8 +20,7 @@ export function PlaceholdersAndVanishInputDemo() {
     console.log("submitted");
   };
   return (
-    <div className="relative  ">
-    <div className="h-[15rem] absolute w-2/3 lg:left-[264px] top-[-185px]  flex flex-col justify-center bg-gradient-to-r from-indigo-500 to-purple-500 items-center px-4">
+    <div className="h-[30rem] flex flex-col justify-center bg-gradient-to-r from-indigo-300 to-purple-300 items-center px-4">
       <h2 className="mb-10 sm:mb-20 text-xl text-center sm:text-5xl dark:text-white text-black">
         Ask Aceternity UI Anything
       </h2>
@@ -34,10 +30,10 @@ export function PlaceholdersAndVanishInputDemo() {
         onSubmit={onSubmit}
       />
     </div>
-    
-    </div>
   );
 }
+
+
 
 
 export function PlaceholdersAndVanishInput({

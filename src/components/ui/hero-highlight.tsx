@@ -2,6 +2,7 @@
 import { cn } from "../../app/utils/cn";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { DockDemo } from "../magicui/dock";
 
 export function HeroHighlightDemo() {
   const [isInView, setIsInView] = useState(false);
@@ -31,6 +32,7 @@ export function HeroHighlightDemo() {
 
   return (
     <HeroHighlight className="mt-[-200px] pb-24 w-full">
+      <div className="absolute z-[0] w-[80%] h-[60%] -left-[50%] rounded-full pink__gradient top-40" />
       <motion.div
         ref={sectionRef}
         initial={{
@@ -62,6 +64,7 @@ export function HeroHighlightDemo() {
           <p className="mt-4 text-lg md:text-xl lg:text-2xl text-neutral-700 dark:text-white">
             As a proficient <Highlight>MERN stack developer</Highlight> and skilled <Highlight>UI/UX designer</Highlight>, I bring a wealth of experience in crafting intuitive, visually appealing digital solutions. Additionally, my passion for teaching and sharing knowledge as a <Highlight>YouTube educator</Highlight> ensures that I not only build exceptional products but also empower others through education.
           </p>
+          < DockDemo/>
         </div>
         <div className="md:w-1/3 mt-8 md:mt-0 md:ml-8 flex justify-center md:justify-end">
           <motion.img

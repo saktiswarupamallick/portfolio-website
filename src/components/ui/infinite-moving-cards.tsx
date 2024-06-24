@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 export function InfiniteMovingCardsDemo() {
   return (
     <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <div className="absolute z-[0] w-[80%] h-[60%] -left-[50%] rounded-full blue__gradient top-40" />
       <div className="text-sm font-bold bg-cyan-50 mb-4 text-center rounded-full border border-cyan-900 p-2 px-10 ">
         Testimonials
       </div>
