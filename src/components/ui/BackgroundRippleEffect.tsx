@@ -2,7 +2,7 @@
 import type { NextPage } from "next";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { cn } from "../../app/utils/cn";
+import { cn } from "../../app/utils/cn";z
 
 export const BackgroundCellAnimation: NextPage = () => {
   return (
