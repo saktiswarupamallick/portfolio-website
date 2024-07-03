@@ -2,19 +2,36 @@
 import type { NextPage } from "next";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { cn } from "../../app/utils/cn";z
+import { cn } from "../../app/utils/cn";
 
 export const BackgroundCellAnimation: NextPage = () => {
   return (
-    <div className="relative h-[660px] bg-white mb-20 flex justify-center items-center overflow-hidden">
+    <div className="relative h-[660px] bg-slate-950 mb-20 flex justify-center items-center overflow-hidden">
       <BackgroundCellCore />
       <div className="relative z-50 pointer-events-none select-none text-center">
-        <h1 className="md:text-2xl lg:text-7xl poppins-bold font-bold bg-clip-text text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-          Looking for a Developer
+        <motion.h1
+          className="bg-clip-text font-poppins font-bold text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500"
+          initial={{ opacity: 0, y: 5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut",
+            delay: 0.6,
+          }}
+        >
+          Hi my name is
+        </motion.h1>
+        <h1 className="md:text-2xl lg:text-7xl poppins-bold font-bold text-white text-bold ">
+          Sakti Swarupa
         </h1>
-        <h2 className="mt-4 md:text-xl lg:text-4xl text-black-500">
-          who can bring your imagination <br />
-          into Reality
+        <h1 className="md:text-2xl lg:text-7xl poppins-bold font-bold bg-clip-text text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
+        I craft things for the web.
+        </h1>
+        <h2 className="mt-4 md:text-lg lg:text-lg text-white">
+        I&apos;m a software engineer with expertise in creating top-notch
+        digital experiences. <br />My current focus is on developing products that are
+        accessible and centered around user needs
+          
         </h2>
         <button className="mt-8 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300">
           Hire Me
@@ -44,7 +61,7 @@ const BackgroundCellCore = () => {
       className="h-full absolute inset-0"
     >
       <div className="absolute h-[40rem] inset-y-0 overflow-hidden">
-        <div className="absolute h-full w-full pointer-events-none -bottom-2 z-40 bg-white [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
+        <div className="absolute h-full w-full pointer-events-none -bottom-2 z-40 bg-slate-950 [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
         <div
           className="absolute inset-0 z-20 bg-transparent"
           style={{
@@ -60,7 +77,7 @@ const BackgroundCellCore = () => {
         >
           <Pattern cellClassName="border-cyan-900 relative z-[100]" />
         </div>
-        <Pattern className="opacity-[0.4]" cellClassName="border-cyan-400" />
+        <Pattern className="opacity-[0.4]" cellClassName="border-cyan-950" />
       </div>
     </div>
   );
@@ -92,7 +109,7 @@ const Pattern = ({
               if (clickedCell) {
                 const distance = Math.sqrt(
                   Math.pow(clickedCell[0] - rowIdx, 2) +
-                    Math.pow(clickedCell[1] - colIdx, 2)
+                  Math.pow(clickedCell[1] - colIdx, 2)
                 );
                 controls.start({
                   opacity: [0, 1 - distance * 0.1, 0],
