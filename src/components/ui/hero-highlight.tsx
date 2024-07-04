@@ -2,7 +2,7 @@
 import { cn } from "../../app/utils/cn";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { DockDemo } from "../magicui/dock";
+
 
 export function HeroHighlightDemo() {
   const [isInView, setIsInView] = useState(false);
@@ -31,7 +31,7 @@ export function HeroHighlightDemo() {
   }, []);
 
   return (
-    <HeroHighlight className=" pb-24 w-full">
+    <HeroHighlight className="pb-24 w-full bg-slate-950">
       <div className="absolute z-[0] w-[80%] h-[60%] -left-[50%] rounded-full pink__gradient top-40" />
       <motion.div
         ref={sectionRef}
@@ -47,7 +47,7 @@ export function HeroHighlightDemo() {
         className="flex flex-col md:flex-row items-center justify-center text-center md:text-left px-4 md:px-8 lg:px-16 w-full"
       >
         <div className="md:w-2/3">
-          <motion.h1
+          <motion.div
             initial={{
               opacity: 0,
               y: 20,
@@ -57,14 +57,18 @@ export function HeroHighlightDemo() {
               duration: 0.5,
               ease: [0.4, 0.0, 0.2, 1],
             }}
-            className="text-2xl md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white leading-relaxed lg:leading-snug"
+            className="flex items-center mb-12 space-x-4"
           >
-            Why Choose Me?
-          </motion.h1>
-          <p className="mt-4 text-lg md:text-xl lg:text-2xl text-neutral-700 dark:text-white">
-            As a proficient <Highlight>MERN stack developer</Highlight> and skilled <Highlight>UI/UX designer</Highlight>, I bring a wealth of experience in crafting intuitive, visually appealing digital solutions. Additionally, my passion for teaching and sharing knowledge as a <Highlight>YouTube educator</Highlight> ensures that I not only build exceptional products but also empower others through education.
+            <span className="text-xl md:text-2xl lg:text-3xl font-black font-poppins text-indigo-600 leading-relaxed lg:leading-snug">01.</span>
+            <h1 className="text-2xl md:text-4xl lg:text-5xl  font-bold text-white dark:text-white leading-relaxed lg:leading-snug">
+              Why Choose Me?
+            </h1>
+            <hr className="flex-grow border-t-2 border-white" />
+          </motion.div>
+          <p className="mt-4 text-lg md:text-xl lg:text-2xl text-white">
+            With over 3 years of professional experience as a <Highlight>Software Development Engineer</Highlight>, I have played a pivotal role in my career journey, developing applications utilizing the <Highlight>MERN stack</Highlight> and overseeing the <Highlight>technical team</Highlight>. My leadership involves managing and executing projects, including creating <Highlight>Inventory Management Systems</Highlight> and <Highlight>productivity software</Highlight>. Collaborating with <Highlight>international clients</Highlight> has showcased my ability to navigate diverse and challenging projects while maintaining a commitment to <Highlight>excellence</Highlight> in technology. I have gained valuable <Highlight>insights and skills</Highlight>, adapting to various challenges and leading successful project executions.
           </p>
-          < DockDemo/>
+         
         </div>
         <div className="md:w-1/3 mt-8 md:mt-0 md:ml-8 flex justify-center md:justify-end">
           <motion.img
@@ -108,11 +112,12 @@ export const HeroHighlight = ({
   return (
     <div
       className={cn(
-        "relative h-auto md:h-[40rem] flex items-center bg-white dark:bg-black justify-center w-full group",
+        "relative h-auto  flex items-center bg-white dark:bg-black justify-center w-full group",
         containerClassName
       )}
       onMouseMove={handleMouseMove}
     >
+      
       <div className="absolute inset-0 bg-dot-thick-neutral-300 dark:bg-dot-thick-neutral-800 pointer-events-none" />
       <motion.div
         className="pointer-events-none bg-dot-thick-indigo-500 dark:bg-dot-thick-indigo-500 absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"

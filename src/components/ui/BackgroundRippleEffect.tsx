@@ -8,7 +8,8 @@ import MagicButton from "./MagicButton";
 
 export const BackgroundCellAnimation: NextPage = () => {
   return (
-    <div className="relative h-[660px] bg-slate-950 mb-20 flex justify-center items-center overflow-hidden">
+    <div className="relative h-[660px] mb-[130px] bg-slate-950 flex justify-center items-center overflow-hidden">
+       <div className="absolute z-[0] w-[80%] h-[60%] -left-[50%] rounded-full pink__gradient top-40" />
       <BackgroundCellCore />
       <div className="relative z-50 pointer-events-none select-none text-center">
         <motion.h1
