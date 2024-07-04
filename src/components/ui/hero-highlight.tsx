@@ -2,6 +2,7 @@
 import { cn } from "../../app/utils/cn";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { GlobeDemo } from "./globedemo";
 
 
 export function HeroHighlightDemo() {
@@ -32,7 +33,7 @@ export function HeroHighlightDemo() {
 
   return (
     <HeroHighlight className="pb-24 w-full bg-slate-950">
-      <div className="absolute z-[0] w-[80%] h-[60%] -left-[50%] rounded-full pink__gradient top-40" />
+     
       <motion.div
         ref={sectionRef}
         initial={{
@@ -70,15 +71,8 @@ export function HeroHighlightDemo() {
           </p>
          
         </div>
-        <div className="md:w-1/3 mt-8 md:mt-0 md:ml-8 flex justify-center md:justify-end">
-          <motion.img
-            src="/certificate.jpg"
-            alt="Profile Picture"
-            className="w-60 h-60 md:w-80 md:h-80 lg:w-96 lg:h-86 rounded-md object-cover"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 1 }}
-          />
+        <div className="md:w-2/3 mt-8 md:mt-0 md:ml-8 flex  md:justify-end">
+          <GlobeDemo />
         </div>
       </motion.div>
     </HeroHighlight>

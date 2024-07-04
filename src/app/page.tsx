@@ -17,7 +17,7 @@ import { Preview } from "@/components/ui/Preview";
 export default function Home() {
   return (
     <main className="bg-slate-950">
-      < NavbarDemo />
+   
       < BackgroundCellAnimation />
       < HeroHighlightDemo />
       <Preview />
