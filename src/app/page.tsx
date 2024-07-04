@@ -10,6 +10,7 @@ import Youtubesec from "@/components/youtubesec";
 import { InfiniteMovingCardsDemo } from "@/components/ui/infinite-moving-cards";
 import { PlaceholdersAndVanishInputDemo } from "@/components/ui/placeholders-and-vanish-input";
 import { Preview } from "@/components/ui/Preview";
+import Projects from "@/components/Project";
 
 
 
@@ -20,6 +21,7 @@ export default function Home() {
    
       < BackgroundCellAnimation />
       < HeroHighlightDemo />
+      <Projects />
       <Preview />
       <Youtube />
       <Youtubesec />
