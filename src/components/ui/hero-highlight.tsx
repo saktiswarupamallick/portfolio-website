@@ -31,7 +31,7 @@ export function HeroHighlightDemo() {
   }, []);
 
   return (
-    <HeroHighlight className="mt-[-200px] pb-24 w-full">
+    <HeroHighlight className=" pb-24 w-full">
       <div className="absolute z-[0] w-[80%] h-[60%] -left-[50%] rounded-full pink__gradient top-40" />
       <motion.div
         ref={sectionRef}

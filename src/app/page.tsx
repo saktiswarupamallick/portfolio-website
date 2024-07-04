@@ -17,9 +17,7 @@ import { Preview } from "@/components/ui/Preview";
 export default function Home() {
   return (
     <main >
-
       < NavbarDemo />
-     
       < BackgroundCellAnimation />
       < HeroHighlightDemo />
       <Preview />
@@ -27,8 +25,6 @@ export default function Home() {
       <Youtubesec />
       < InfiniteMovingCardsDemo />
       <PlaceholdersAndVanishInputDemo />
-
-      
     </main>
   );
 }
