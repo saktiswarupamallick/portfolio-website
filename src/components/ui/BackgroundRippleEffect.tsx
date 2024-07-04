@@ -3,6 +3,8 @@ import type { NextPage } from "next";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { cn } from "../../app/utils/cn";
+import { FaLocationArrow } from "react-icons/fa6";
+import MagicButton from "./MagicButton";
 
 export const BackgroundCellAnimation: NextPage = () => {
   return (
@@ -33,9 +35,11 @@ export const BackgroundCellAnimation: NextPage = () => {
         accessible and centered around user needs
           
         </h2>
-        <button className="mt-8 px-8 py-4 bg-black text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300">
-          Hire Me
-        </button>
+        <MagicButton
+              title="Show my work"
+              icon={<FaLocationArrow />}
+              position="right"
+            />
       </div>
     </div>
   );
@@ -77,7 +81,7 @@ const BackgroundCellCore = () => {
         >
           <Pattern cellClassName="border-cyan-900 relative z-[100]" />
         </div>
-        <Pattern className="opacity-[0.4]" cellClassName="border-cyan-950" />
+        <Pattern className="opacity-[0.4]" cellClassName="border-cyan-700" />
       </div>
     </div>
   );
