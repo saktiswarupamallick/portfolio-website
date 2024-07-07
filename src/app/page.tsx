@@ -12,6 +12,7 @@ import { PlaceholdersAndVanishInputDemo } from "@/components/ui/placeholders-and
 import { Preview } from "@/components/ui/Preview";
 
 import { FollowingPointerDemo } from "@/components/ui/following-pointer";
+import RecentProjects from "@/components/RecentProjects";
 
 
 
@@ -22,7 +23,7 @@ export default function Home() {
    
       < BackgroundCellAnimation />
       < HeroHighlightDemo />
-      < FollowingPointerDemo />
+      < RecentProjects />
       <Preview />
       <Youtube />
       <Youtubesec />
