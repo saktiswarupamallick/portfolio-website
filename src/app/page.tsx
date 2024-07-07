@@ -28,7 +28,7 @@ export default function Home() {
       <Preview />
       <MovingLine />
      
-      < InfiniteMovingCardsDemo />
+     
       <PlaceholdersAndVanishInputDemo />
     </main>
   );

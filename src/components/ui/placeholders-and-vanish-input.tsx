@@ -21,8 +21,11 @@ export function PlaceholdersAndVanishInputDemo() {
   };
   return (
     <div className="h-[20rem] flex flex-col justify-center bg-gradient-to-r from-indigo-300 to-purple-300 items-center px-4">
-      <h2 className="mb-10 sm:mb-20 text-xl text-center sm:text-5xl dark:text-white text-black">
-        Ask Aceternity UI Anything
+      <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white leading-relaxed lg:leading-snug">
+        Contact me
+      </h1>
+      <h2 className="text-lg md:text-xl mb-10 lg:text-2xl font-medium text-black dark:text-white text-center mt-4">
+        Let's Collaborate and Create Stunning, User-Centric Web Experiences That Drive Engagement and Deliver Results Together
       </h2>
       <PlaceholdersAndVanishInput
         placeholders={placeholders}

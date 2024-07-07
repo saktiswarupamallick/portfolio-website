@@ -4,7 +4,7 @@ export const projects = [
       title: "3D Solar System Planets to Explore",
       des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
       img: "/project1.png",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+      iconLists: ["/next.svg", "/tail.svg", "/ts.png", "/fm.svg"],
       link: "/ui.earth.com",
     },
     {
@@ -12,7 +12,7 @@ export const projects = [
       title: "Yoom - Video Conferencing App",
       des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
       img: "/project2.png",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+      iconLists: ["/re.svg", "/tail.svg", "/js.png", "/fm.svg"],
       link: "/ui.yoom.com",
     },
     {
