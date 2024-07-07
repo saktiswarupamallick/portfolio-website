@@ -5,14 +5,14 @@ import { FaLocationArrow } from "react-icons/fa6";
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
 
+
+
 const RecentProjects = () => {
   return (
     <div className="flex items-center justify-center min-h-screen py-20">
       <div className="text-center">
-        <h1 className="heading">
-          A small selection of{" "}
-          <span className="text-purple">recent projects</span>
-        </h1>
+      <h2 className="text-5xl font-bold text-white mb-2">Leading-Edge  <span className="text-purple-500">Project Initiatives</span> </h2>
+      
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-10">
           {projects.map((item) => (
             <div
