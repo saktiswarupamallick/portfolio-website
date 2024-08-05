@@ -13,6 +13,7 @@ import { Preview } from "@/components/ui/Preview";
 
 
 import RecentProjects from "@/components/RecentProjects";
+import { TracingBeamDemo } from "@/components/ui/tracing-beam";
 
 
 
@@ -26,7 +27,7 @@ export default function Home() {
       
       < RecentProjects />
       <Preview />
-      <MovingLine />
+      <TracingBeamDemo />
      
      
       <PlaceholdersAndVanishInputDemo />
