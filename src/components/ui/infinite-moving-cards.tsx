@@ -26,9 +26,14 @@ const logos = [
   '/next.svg',
   '/Nodejs.png',
   '/mongo.png',
-  '/Expressjs.png',
-  '/logos/logo9.png',
-  '/logos/logo10.png',
+  '/Express.png',
+  '/Prisma.png',
+  '/awslogo.png',
+  '/tail.svg',
+  '/mysql.png',
+
+  
+  
 ];
 
 export const InfiniteMovingLogos = ({
@@ -108,7 +113,7 @@ export const InfiniteMovingLogos = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
+          "flex min-w-full shrink-0 gap-10 py-4 w-max flex-nowrap",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
