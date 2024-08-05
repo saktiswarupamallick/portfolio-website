@@ -13,8 +13,9 @@ import { twMerge } from "tailwind-merge";
 
 
 export function TracingBeamDemo() {
-  return (
+  return (<> <h2 className="text-5xl text-center font-bold text-white mb-2">Welcome Back To My <span className="text-purple-500">Youtube Channel</span> </h2>
     <TracingBeam className="px-6">
+
       <div className="max-w-2xl mx-auto antialiased pt-4 relative">
         {dummyContent.map((item, index) => (
           <div key={`content-${index}`} className="mb-10">
@@ -26,7 +27,7 @@ export function TracingBeamDemo() {
               {item.title}
             </p>
 
-            <div className="text-sm  prose prose-sm dark:prose-invert">
+            <div className="text-sm text-white prose prose-sm dark:prose-invert">
               {item?.image && (
                 <Image
                   src={item.image}
@@ -42,6 +43,8 @@ export function TracingBeamDemo() {
         ))}
       </div>
     </TracingBeam>
+  </>
+
   );
 }
 
@@ -51,39 +54,32 @@ const dummyContent = [
     description: (
       <>
         <p>
-          Sit duis est minim proident non nisi velit non consectetur. Esse
-          adipisicing laboris consectetur enim ipsum reprehenderit eu deserunt
-          Lorem ut aliqua anim do. Duis cupidatat qui irure cupidatat incididunt
-          incididunt enim magna id est qui sunt fugiat. Laboris do duis pariatur
-          fugiat Lorem aute sit ullamco. Qui deserunt non reprehenderit dolore
-          nisi velit exercitation Lorem qui do enim culpa. Aliqua eiusmod in
-          occaecat reprehenderit laborum nostrud fugiat voluptate do Lorem culpa
-          officia sint labore. Tempor consectetur excepteur ut fugiat veniam
-          commodo et labore dolore commodo pariatur.
+        I have created a comprehensive YouTube series where I guide viewers through the process of building
+         a minimalistic SASS website. In this series, I utilize Next.js for the framework, Aceternity UI and ShadCN UI
+          for the user interface components, and Tailwind CSS for the styling. The series covers everything from initial setup 
+          to developing the complete website,
+         providing a detailed and practical approach to modern web development.
         </p>
-        
+
       </>
     ),
-    badge: "React",
+    badge: "",
     image:
       "/youtube.jpeg",
   },
-  
+
   {
     title: "Lorem Ipsum Dolor Sit Amet",
     description: (
       <>
         <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
+        Created a comprehensive YouTube video in collaboration with ZEGOCLOUD,
+         showcasing the development of a video calling app using their SDKs. This paid partnership involved detailed 
+        demonstration and step-by-step guidance on creating functional video calling features.
         </p>
       </>
     ),
-    badge: "Launch Week",
+    badge: "",
     image:
       "/zego.jpeg",
   },

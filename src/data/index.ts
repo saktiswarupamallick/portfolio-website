@@ -39,13 +39,21 @@ export const projects = [
     {
       id: 1,
       img: "/github.png",
+      href:"https://github.com/saktiswarupamallick"
     },
     {
       id: 2,
       img: "/linkedin.png",
+      href:"https://www.linkedin.com/in/sakti-swarupa-mallick-13540b239/"
     },
     {
       id: 3,
       img: "/x.png",
+      href:"https://x.com/SaktiSwarupa"
+    },
+    {
+      id: 4,
+      img: "/utube.png",
+      href:"https://www.youtube.com/@saktiicodes"
     },
   ];

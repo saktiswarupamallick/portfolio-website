@@ -1,5 +1,5 @@
 
-import { NavbarDemo } from "../components/ui/navbar-menu";
+import Navbar from "../components/ui/navbar-menu";
 import Image from "next/image";
 import { BackgroundCellAnimation } from "../components/ui/BackgroundRippleEffect";
 import { HeroHighlightDemo } from "@/components/ui/hero-highlight";
@@ -15,7 +15,7 @@ import Footer from "@/components/ui/Footer";
 export default function Home() {
   return (
     <main className="bg-slate-950">
-
+      < Navbar/>
       < BackgroundCellAnimation />
       < HeroHighlightDemo />
       < InfiniteMovingLogosDemo/>

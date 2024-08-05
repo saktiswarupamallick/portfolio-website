@@ -1,5 +1,4 @@
 import { FaLocationArrow } from "react-icons/fa6";
-
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 
@@ -17,16 +16,14 @@ const Footer = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="font-bold text-4xl md:text-5xl text-center text-white lg:max-w-[45vw]">
-          Ready to take <span className="text-purple-500">your</span> digital
-          presence to the next level?
+          Let's Elevate <span className="text-purple-500">Your</span> Online Presence
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center text-white">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
+          Contact me today to discuss how we can work together to achieve your digital goals.
         </p>
         <a href="mailto:saktiswarupamallick@gmail.com">
           <MagicButton
-            title="Let's get in touch"
+            title="Contact Me"
             icon={<FaLocationArrow />}
             position="right"
           />
@@ -41,9 +38,9 @@ const Footer = () => {
           {socialMedia.map((info) => (
             <div
               key={info.id}
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-            >
-              <img src={info.img} alt="icons" width={20} height={20} />
+              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-xl border border-black-300"
+            ><a href={info.href}> <img src={info.img} alt="icons" width={30} height={30} /></a>
+             
             </div>
           ))}
         </div>

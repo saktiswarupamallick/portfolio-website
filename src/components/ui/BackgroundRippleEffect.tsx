@@ -9,11 +9,11 @@ import MagicButton from "./MagicButton";
 export const BackgroundCellAnimation: NextPage = () => {
   return (
     <div className="relative h-[660px] mb-[130px] bg-slate-950 flex justify-center items-center overflow-hidden">
-       <div className="absolute z-[0] w-[80%] h-[60%] -left-[50%] rounded-full pink__gradient top-40" />
+      <div className="absolute z-[0] w-[80%] h-[60%] -left-[50%] rounded-full pink__gradient top-40" />
       <BackgroundCellCore />
       <div className="relative z-50 pointer-events-none select-none text-center">
         <motion.h1
-          className="bg-clip-text font-poppins font-bold text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500"
+          className="bg-clip-text font-poppins font-bold text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500 text-[1rem] sm:text-[1rem] lg:text-[2rem]"
           initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -24,24 +24,26 @@ export const BackgroundCellAnimation: NextPage = () => {
         >
           Hi my name is
         </motion.h1>
-        <h1 className="md:text-2xl lg:text-7xl poppins-bold font-bold text-white text-bold ">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-7xl poppins-bold font-bold text-white text-bold">
           Sakti Swarupa
         </h1>
-        <h1 className="md:text-2xl lg:text-7xl poppins-bold font-bold bg-clip-text text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-        I craft things for the web.
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-7xl poppins-bold font-bold bg-clip-text text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
+          I craft things for the web.
         </h1>
-        <h2 className="mt-4 md:text-lg lg:text-lg text-white">
-        I&apos;m a software engineer with expertise in creating top-notch
-        digital experiences. <br />My current focus is on developing products that are
-        accessible and centered around user needs
-          
+        <h2 className="mt-4 text-base sm:text-lg md:text-xl lg:text-lg text-white">
+          I&apos;m a software engineer with expertise in creating top-notch
+          digital experiences. <br />My current focus is on developing products that are
+          accessible and centered around user needs
         </h2>
-        <MagicButton
-              title=" My Resume"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
+        <div className="flex flex-col items-center"><MagicButton
+          title=" My Resume"
+          icon={<FaLocationArrow />}
+          position="right"
+
+        /></div>
+        
       </div>
+
     </div>
   );
 };
