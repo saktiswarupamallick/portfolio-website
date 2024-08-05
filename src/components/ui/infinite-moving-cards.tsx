@@ -3,21 +3,14 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 
-export function InfiniteMovingCardsDemo() {
+export function InfiniteMovingLogosDemo() {
   return (
-    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="h-[10rem] rounded-md flex flex-col antialiased bg-slate-950 bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <div className="absolute z-[0] w-[80%] h-[60%] -left-[50%] rounded-full blue__gradient top-40" />
-      <div className="text-sm font-bold bg-gradient-to-r from-indigo-300 to-purple-300 text-white mb-4 text-center rounded-full p-2 px-10 ">
-        🎉 Highlights
-      </div>
-      <h1 className="text-4xl font-bold mb-8 text-center">
-        <span className="block">Crafting</span>
-        <span className="block">
-          <span className="text-purple-500">Solutions</span> with Precision
-        </span>
-      </h1>
-      <InfiniteMovingCards
-        items={testimonials}
+     
+     
+      <InfiniteMovingLogos
+        items={logos}
         direction="right"
         speed="slow"
       />
@@ -25,50 +18,27 @@ export function InfiniteMovingCardsDemo() {
   );
 }
 
-const testimonials = [
-  {
-    quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
-  },
-  {
-    quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
-  },
-  {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
-  },
-  {
-    quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
-  },
+const logos = [
+  '/js.png',
+  '/tail.svg',
+  '/ts.png',
+  '/re.svg',
+  '/next.svg',
+  '/Nodejs.png',
+  '/mongo.png',
+  '/Expressjs.png',
+  '/logos/logo9.png',
+  '/logos/logo10.png',
 ];
 
-export const InfiniteMovingCards = ({
+export const InfiniteMovingLogos = ({
   items,
   direction = "left",
   speed = "fast",
   pauseOnHover = true,
   className,
 }: {
-  items: {
-    quote: string;
-    name: string;
-    title: string;
-  }[];
+  items: string[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
@@ -81,6 +51,7 @@ export const InfiniteMovingCards = ({
     addAnimation();
   }, []);
   const [start, setStart] = useState(false);
+
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -97,6 +68,7 @@ export const InfiniteMovingCards = ({
       setStart(true);
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
@@ -112,6 +84,7 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
@@ -123,6 +96,7 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
   return (
     <div
       ref={containerRef}
@@ -139,33 +113,12 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, idx) => (
+        {items.map((src, idx) => (
           <li
-            className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px]"
-            style={{
-              background: "linear-gradient(180deg, #1E293B, #0F172A)",
-            }}
-            key={item.name}
+            className="w-[80px] h-[80px] flex-shrink-0"
+            key={idx}
           >
-            <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className="relative z-20 text-sm leading-[1.6] text-white font-normal">
-                {item.quote}
-              </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
-                <span className="flex flex-col gap-1">
-                  <span className="text-sm leading-[1.6] text-white font-normal">
-                    {item.name}
-                  </span>
-                  <span className="text-sm leading-[1.6] text-white font-normal">
-                    {item.title}
-                  </span>
-                </span>
-              </div>
-            </blockquote>
+            <img src={src} alt={`Logo ${idx + 1}`} className="w-full h-full object-contain" />
           </li>
         ))}
       </ul>
