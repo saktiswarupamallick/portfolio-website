@@ -37,7 +37,7 @@ export const BackgroundCellAnimation: NextPage = () => {
           
         </h2>
         <MagicButton
-              title="Show my work"
+              title=" My Resume"
               icon={<FaLocationArrow />}
               position="right"
             />
