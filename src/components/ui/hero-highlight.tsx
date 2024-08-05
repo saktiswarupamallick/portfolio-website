@@ -59,7 +59,7 @@ export function HeroHighlightDemo() {
             }}
             className="flex items-center mb-12 space-x-4"
           >
-            <span className="text-xl md:text-2xl lg:text-3xl font-black font-poppins text-indigo-600 leading-relaxed lg:leading-snug">01.</span>
+           
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white dark:text-white leading-relaxed lg:leading-snug">
               Why Choose Me?
             </h1>

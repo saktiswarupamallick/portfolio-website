@@ -7,6 +7,7 @@ import { InfiniteMovingLogosDemo } from "@/components/ui/infinite-moving-cards";
 import { Preview } from "@/components/ui/Preview";
 import RecentProjects from "@/components/RecentProjects";
 import { TracingBeamDemo } from "@/components/ui/tracing-beam";
+import Footer from "@/components/ui/Footer";
 
 
 

@@ -38,14 +38,14 @@ export const projects = [
   export const socialMedia = [
     {
       id: 1,
-      img: "/git.svg",
+      img: "/github.png",
     },
     {
       id: 2,
-      img: "/twit.svg",
+      img: "/linkedin.png",
     },
     {
       id: 3,
-      img: "/link.svg",
+      img: "/x.png",
     },
   ];
