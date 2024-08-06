@@ -35,12 +35,12 @@ export const BackgroundCellAnimation: NextPage = () => {
           digital experiences. <br />My current focus is on developing products that are
           accessible and centered around user needs
         </h2>
-        <div className="flex flex-col items-center"><MagicButton
+        <div className="flex flex-col items-center"><a  href="https://docs.google.com/document/d/1asDR0LjCAoC00VApRjRVfTgAnSbihKAx/edit?usp=sharing&ouid=107048227985647790869&rtpof=true&sd=true"><MagicButton
           title=" My Resume"
           icon={<FaLocationArrow />}
           position="right"
 
-        /></div>
+        /></a></div>
         
       </div>
 

@@ -58,14 +58,14 @@ const dummyContent = [
          a minimalistic SASS website. In this series, I utilize Next.js for the framework, Aceternity UI and ShadCN UI
           for the user interface components, and Tailwind CSS for the styling. The series covers everything from initial setup 
           to developing the complete website,
-         providing a detailed and practical approach to modern web development.
+         providing a detailed and practical approach to modern web development...............<a  className="text-purple-500 text-lg font-semibold" href="https://www.youtube.com/watch?v=zzRw3hvtWNY">click here</a>
         </p>
 
       </>
     ),
     badge: "",
     image:
-      "/youtube.jpeg",
+      "/youtube.png",
   },
 
   {
@@ -75,7 +75,7 @@ const dummyContent = [
         <p>
         Created a comprehensive YouTube video in collaboration with ZEGOCLOUD,
          showcasing the development of a video calling app using their SDKs. This paid partnership involved detailed 
-        demonstration and step-by-step guidance on creating functional video calling features.
+        demonstration and step-by-step guidance on creating functional video calling features................<a  className="text-purple-500 text-lg font-semibold" href="https://www.youtube.com/watch?v=FCiHAGNtno4">click here</a>
         </p>
       </>
     ),
