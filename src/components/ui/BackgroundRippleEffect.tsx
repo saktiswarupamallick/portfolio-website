@@ -37,9 +37,9 @@ export const BackgroundCellAnimation: NextPage = () => {
           accessible and centered around user needs
         </h2>
         <div className="mt-4">
-          <Link href="https://www.youtube.com/watch?v=zzRw3hvtWNY">
+          <Link href="https://drive.google.com/file/d/1rta-DhJc7SqCZ6S0NZ99DcIjDWwEg4QN/view?usp=drive_link">
             <MagicButton
-              title="Contact Me"
+              title="My Resume"
               icon={<FaLocationArrow />}
               position="right"
             />
