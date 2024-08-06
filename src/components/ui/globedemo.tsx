@@ -404,7 +404,7 @@ export function GlobeDemo() {
         className="w-full text-center"
       >
         <p className="text-base sm:text-lg md:text-xl font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
-        Discover projects I've developed, international collaborations, and my commitment to excellence in the tech industry.
+        Discover projects I&apos;ve developed, international collaborations, and my commitment to excellence in the tech industry.
         </p>
       </motion.div>
       <div className="absolute w-full bottom-0 inset-x-0 h-40  from-transparent to-black to-white pointer-events-none select-none z-40" />

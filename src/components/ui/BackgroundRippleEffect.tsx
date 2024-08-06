@@ -1,7 +1,7 @@
 "use client";
 import type { NextPage } from "next";
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, AnimationControls } from "framer-motion";
 import { cn } from "../../app/utils/cn";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
@@ -84,9 +84,9 @@ const BackgroundCellCore = () => {
             WebkitMaskRepeat: "no-repeat",
           }}
         >
-          <Pattern cellClassName="border-cyan-900 relative z-[100]" />
+          <Pattern cellClassName="border-cyan-900 relative z-[100]" mousePosition={mousePosition} />
         </div>
-        <Pattern className="opacity-[0.4]" cellClassName="border-cyan-700" />
+        <Pattern className="opacity-[0.4]" cellClassName="border-cyan-700" mousePosition={mousePosition} />
       </div>
     </div>
   );
@@ -95,14 +95,36 @@ const BackgroundCellCore = () => {
 const Pattern = ({
   className,
   cellClassName,
+  mousePosition,
 }: {
   className?: string;
   cellClassName?: string;
+  mousePosition: { x: number; y: number };
 }) => {
   const x = new Array(47).fill(0);
   const y = new Array(30).fill(0);
   const matrix = x.map((_, i) => y.map((_, j) => [i, j]));
   const [clickedCell, setClickedCell] = useState<any>(null);
+  const controlsArray: AnimationControls[][] = matrix.map(() =>
+    y.map(() => useAnimation())
+  );
+
+  useEffect(() => {
+    if (clickedCell) {
+      matrix.forEach((row, rowIdx) => {
+        row.forEach((_, colIdx) => {
+          const distance = Math.sqrt(
+            Math.pow(clickedCell[0] - rowIdx, 2) +
+            Math.pow(clickedCell[1] - colIdx, 2)
+          );
+          controlsArray[rowIdx][colIdx].start({
+            opacity: [0, 1 - distance * 0.1, 0],
+            transition: { duration: distance * 0.2 },
+          });
+        });
+      });
+    }
+  }, [clickedCell]);
 
   return (
     <div className={cn("flex flex-row relative z-30", className)}>
@@ -111,44 +133,27 @@ const Pattern = ({
           key={`matrix-row-${rowIdx}`}
           className="flex flex-col relative z-20 border-b"
         >
-          {row.map((column, colIdx) => {
-            const controls = useAnimation();
-
-            useEffect(() => {
-              if (clickedCell) {
-                const distance = Math.sqrt(
-                  Math.pow(clickedCell[0] - rowIdx, 2) +
-                  Math.pow(clickedCell[1] - colIdx, 2)
-                );
-                controls.start({
-                  opacity: [0, 1 - distance * 0.1, 0],
-                  transition: { duration: distance * 0.2 },
-                });
-              }
-            }, [clickedCell]);
-
-            return (
-              <div
-                key={`matrix-col-${colIdx}`}
-                className={cn(
-                  "bg-transparent border-l border-b border-neutral-600",
-                  cellClassName
-                )}
-                onClick={() => setClickedCell([rowIdx, colIdx])}
-              >
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileHover={{
-                    opacity: [0, 1, 0.5],
-                    backgroundColor: "#fc67fa", // Dark cyan color
-                  }}
-                  transition={{ duration: 0.5, ease: "backOut" }}
-                  animate={controls}
-                  className="bg-purple-800 h-12 w-12"
-                ></motion.div>
-              </div>
-            );
-          })}
+          {row.map((_, colIdx) => (
+            <div
+              key={`matrix-col-${colIdx}`}
+              className={cn(
+                "bg-transparent border-l border-b border-neutral-600",
+                cellClassName
+              )}
+              onClick={() => setClickedCell([rowIdx, colIdx])}
+            >
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileHover={{
+                  opacity: [0, 1, 0.5],
+                  backgroundColor: "#fc67fa", // Dark cyan color
+                }}
+                transition={{ duration: 0.5, ease: "backOut" }}
+                animate={controlsArray[rowIdx][colIdx]}
+                className="bg-purple-800 h-12 w-12"
+              ></motion.div>
+            </div>
+          ))}
         </div>
       ))}
     </div>

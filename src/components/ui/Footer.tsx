@@ -16,7 +16,7 @@ const Footer = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="font-bold text-4xl md:text-5xl text-center text-white lg:max-w-[45vw]">
-          Let's Elevate <span className="text-purple-500">Your</span> Online Presence
+          Let&apos;s Elevate <span className="text-purple-500">Your</span> Online Presence
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center text-white">
           Contact me today to discuss how we can work together to achieve your digital goals.
