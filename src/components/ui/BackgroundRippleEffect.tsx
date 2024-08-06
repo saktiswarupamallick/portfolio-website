@@ -105,9 +105,15 @@ const Pattern = ({
   const y = new Array(30).fill(0);
   const matrix = x.map((_, i) => y.map((_, j) => [i, j]));
   const [clickedCell, setClickedCell] = useState<any>(null);
-  const controlsArray: AnimationControls[][] = matrix.map(() =>
-    y.map(() => useAnimation())
-  );
+  
+  const controlsArray: AnimationControls[][] = [];
+  for (let i = 0; i < x.length; i++) {
+    const row: AnimationControls[] = [];
+    for (let j = 0; j < y.length; j++) {
+      row.push(useAnimation());
+    }
+    controlsArray.push(row);
+  }
 
   useEffect(() => {
     if (clickedCell) {
@@ -124,7 +130,7 @@ const Pattern = ({
         });
       });
     }
-  }, [clickedCell]);
+  }, [clickedCell, controlsArray, matrix]);
 
   return (
     <div className={cn("flex flex-row relative z-30", className)}>
