@@ -1,7 +1,7 @@
 "use client";
 import type { NextPage } from "next";
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useAnimation, AnimationControls } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "../../app/utils/cn";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
@@ -105,32 +105,6 @@ const Pattern = ({
   const y = new Array(30).fill(0);
   const matrix = x.map((_, i) => y.map((_, j) => [i, j]));
   const [clickedCell, setClickedCell] = useState<any>(null);
-  
-  const controlsArray: AnimationControls[][] = [];
-  for (let i = 0; i < x.length; i++) {
-    const row: AnimationControls[] = [];
-    for (let j = 0; j < y.length; j++) {
-      row.push(useAnimation());
-    }
-    controlsArray.push(row);
-  }
-
-  useEffect(() => {
-    if (clickedCell) {
-      matrix.forEach((row, rowIdx) => {
-        row.forEach((_, colIdx) => {
-          const distance = Math.sqrt(
-            Math.pow(clickedCell[0] - rowIdx, 2) +
-            Math.pow(clickedCell[1] - colIdx, 2)
-          );
-          controlsArray[rowIdx][colIdx].start({
-            opacity: [0, 1 - distance * 0.1, 0],
-            transition: { duration: distance * 0.2 },
-          });
-        });
-      });
-    }
-  }, [clickedCell, controlsArray, matrix]);
 
   return (
     <div className={cn("flex flex-row relative z-30", className)}>
@@ -155,7 +129,6 @@ const Pattern = ({
                   backgroundColor: "#fc67fa", // Dark cyan color
                 }}
                 transition={{ duration: 0.5, ease: "backOut" }}
-                animate={controlsArray[rowIdx][colIdx]}
                 className="bg-purple-800 h-12 w-12"
               ></motion.div>
             </div>
