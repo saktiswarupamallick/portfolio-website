@@ -24,13 +24,13 @@ const Navbar: NextPage = () => {
 
         {/* Navigation Items */}
         <div className="hidden md:flex space-x-6">
-          <a href="#projects" className="text-lg transition-colors duration-300 hover:text-indigo-500">
+          <a href="#projects" className="text-md transition-colors font-poppins  duration-300 hover:text-indigo-500">
             Projects
           </a>
-          <a href="#about" className="text-lg transition-colors duration-300 hover:text-indigo-500">
+          <a href="#about" className="text-md transition-colors font-poppins duration-300 hover:text-indigo-500">
             About Me
           </a>
-          <a href="#contact" className="text-lg transition-colors duration-300 hover:text-indigo-500">
+          <a href="#contact" className="text-md transition-colors font-poppins duration-300 hover:text-indigo-500">
             Contact Me
           </a>
         </div>
@@ -61,13 +61,13 @@ const Navbar: NextPage = () => {
       <div
         className={`md:hidden flex flex-col items-center bg-gray-900 absolute top-16 left-0 w-full transition-transform duration-300 ease-in-out ${isOpen ? "transform translate-y-0" : "transform -translate-y-full"}`}
       >
-        <a href="#projects" className="py-2 text-lg transition-colors duration-300 hover:text-indigo-500">
+        <a href="#projects" className="py-2 text-lg transition-colors text-gray-200 duration-300 hover:text-indigo-600">
           Projects
         </a>
-        <a href="#about" className="py-2 text-lg transition-colors duration-300 hover:text-indigo-500">
+        <a href="#about" className="py-2 text-lg transition-colors duration-300 hover:text-indigo-600">
           About Me
         </a>
-        <a href="#contact" className="py-2 text-lg transition-colors duration-300 hover:text-indigo-500">
+        <a href="#contact" className="py-2 text-lg transition-colors duration-300 hover:text-indigo-600">
           Contact Me
         </a>
       </div>

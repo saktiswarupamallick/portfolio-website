@@ -5,13 +5,14 @@ import { motion, useAnimation } from "framer-motion";
 import { cn } from "../../app/utils/cn";
 import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
+import Link from "next/link";
 
 export const BackgroundCellAnimation: NextPage = () => {
   return (
     <div className="relative h-[660px] mb-[130px] bg-slate-950 flex justify-center items-center overflow-hidden">
       <div className="absolute z-[0] w-[80%] h-[60%] -left-[50%] rounded-full pink__gradient top-40" />
       <BackgroundCellCore />
-      <div className="relative z-50 pointer-events-none select-none text-center">
+      <div className="relative z-50 select-none text-center">
         <motion.h1
           className="bg-clip-text font-poppins font-bold text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500 text-[1rem] sm:text-[1rem] lg:text-[2rem]"
           initial={{ opacity: 0, y: 5 }}
@@ -35,15 +36,16 @@ export const BackgroundCellAnimation: NextPage = () => {
           digital experiences. <br />My current focus is on developing products that are
           accessible and centered around user needs
         </h2>
-        <div className="flex flex-col items-center"><a  href="https://docs.google.com/document/d/1asDR0LjCAoC00VApRjRVfTgAnSbihKAx/edit?usp=sharing&ouid=107048227985647790869&rtpof=true&sd=true"><MagicButton
-          title=" My Resume"
-          icon={<FaLocationArrow />}
-          position="right"
-
-        /></a></div>
-        
+        <div className="mt-4">
+          <Link href="https://www.youtube.com/watch?v=zzRw3hvtWNY">
+            <MagicButton
+              title="Contact Me"
+              icon={<FaLocationArrow />}
+              position="right"
+            />
+          </Link>
+        </div>
       </div>
-
     </div>
   );
 };

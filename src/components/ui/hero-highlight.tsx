@@ -30,8 +30,7 @@ export function HeroHighlightDemo() {
     };
   }, []);
 
-  return (
-    <HeroHighlight className="pb-24 w-full bg-slate-950">
+  return (<div id="about"><HeroHighlight className="pb-24 w-full bg-slate-950" >
       <div className="absolute z-[20] w-[70%] h-[60%] -left-[50%] rounded-full pink__gradient top-40" />
       <motion.div
         ref={sectionRef}
@@ -73,7 +72,8 @@ export function HeroHighlightDemo() {
           <GlobeDemo />
         </div>
       </motion.div>
-    </HeroHighlight>
+    </HeroHighlight></div>
+    
   );
 }
 
