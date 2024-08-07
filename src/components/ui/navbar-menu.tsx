@@ -29,7 +29,7 @@ const Navbar: NextPage = () => {
           className="md:hidden flex items-center px-2 py-1 border border-gray-600 rounded transition-colors duration-300 hover:bg-gray-700"
           aria-label="Toggle menu"
         >
-          <FaBars className="w-6 h-6" />
+          <FaBars className="w-6 h-6" bg-slate-950 />
         </button>
 
         {/* Navigation Items for Larger Screens */}
