@@ -29,7 +29,7 @@ const Navbar: NextPage = () => {
           className="md:hidden flex items-center px-2 py-1 border border-gray-600 rounded transition-colors duration-300 hover:bg-gray-700"
           aria-label="Toggle menu"
         >
-          <FaBars className="w-6 h-6" bg-slate-950 />
+          <FaBars className="w-6 h-6" />
         </button>
 
         {/* Navigation Items for Larger Screens */}
@@ -47,22 +47,19 @@ const Navbar: NextPage = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`md:hidden flex flex-col items-center bg-slate-950 absolute top-16 left-0 w-full transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-y-0" : "-translate-y-full"
-        }`}
-        style={{ zIndex: isOpen ? 79 : -1 }} // Adjust zIndex to ensure it is shown above or below appropriately
-      >
-        <a href="#projects" className="py-2 text-lg transition-colors text-gray-200 duration-300 hover:text-indigo-600">
-          Projects
-        </a>
-        <a href="#about" className="py-2 text-lg transition-colors duration-300 hover:text-indigo-600">
-          About Me
-        </a>
-        <a href="#contact" className="py-2 text-lg transition-colors duration-300 hover:text-indigo-600">
-          Contact Me
-        </a>
-      </div>
+      {isOpen && (
+        <div className="md:hidden flex flex-col items-center bg-slate-950 absolute top-16 left-0 w-full transition-transform duration-300 ease-in-out">
+          <a href="#projects" className="py-2 text-lg transition-colors text-gray-200 duration-300 hover:text-indigo-600">
+            Projects
+          </a>
+          <a href="#about" className="py-2 text-lg transition-colors duration-300 hover:text-indigo-600">
+            About Me
+          </a>
+          <a href="#contact" className="py-2 text-lg transition-colors duration-300 hover:text-indigo-600">
+            Contact Me
+          </a>
+        </div>
+      )}
     </nav>
   );
 };
