@@ -48,7 +48,7 @@ const Navbar: NextPage = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden flex flex-col items-center bg-slate-950 absolute top-16 left-0 w-full transition-transform duration-300 ease-in-out">
+        <div className="md:hidden flex flex-col items-center bg-slate-95 0 absolute top-16 left-0 w-full transition-transform duration-300 ease-in-out">
           <a href="#projects" className="py-2 text-lg transition-colors text-gray-200 duration-300 hover:text-indigo-600">
             Projects
           </a>

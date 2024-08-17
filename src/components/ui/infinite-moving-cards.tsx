@@ -19,18 +19,16 @@ export function InfiniteMovingLogosDemo() {
 }
 
 const logos = [
-  '/js.png',
-  '/tail.svg',
-  '/ts.png',
-  '/re.svg',
-  '/next.svg',
-  '/Nodejs.png',
-  '/mongo.png',
-  '/Express.png',
-  '/Prisma.png',
-  '/awslogo.png',
-  '/tail.svg',
-  '/mysql.png',
+'/skill1.png',
+'/skill2.png',
+'/skill3.png',
+'/skill4.png',
+'/skill5.png',
+'/skill6.png',
+'/skill7.png',
+'/skill8.png',
+'/skill9.png',
+'/skill10.png',
 
   
   
@@ -120,7 +118,7 @@ export const InfiniteMovingLogos = ({
       >
         {items.map((src, idx) => (
           <li
-            className="w-[80px] h-[80px] flex-shrink-0"
+            className="w-[130px] h-[130px] flex-shrink-0"
             key={idx}
           >
             <img src={src} alt={`Logo ${idx + 1}`} className="w-full h-full object-contain" />

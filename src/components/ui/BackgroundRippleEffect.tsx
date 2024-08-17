@@ -7,6 +7,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
 import Link from "next/link";
 
+
 export const BackgroundCellAnimation: NextPage = () => {
   return (
     <div className="relative h-[660px] mb-[130px] bg-slate-950 flex justify-center items-center overflow-hidden">
@@ -45,6 +46,7 @@ export const BackgroundCellAnimation: NextPage = () => {
             />
           </Link>
         </div>
+        
       </div>
     </div>
   );
