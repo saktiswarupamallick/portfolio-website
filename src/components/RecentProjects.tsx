@@ -11,23 +11,23 @@ const RecentProjects = () => {
   return (
     <div className="flex items-center justify-center min-h-screen py-20" id="projects">
       <div className="text-center">
-      <h2 className="text-5xl font-bold text-white mb-2">Leading-Edge  <span className="text-purple-500">Project Initiatives</span> </h2>
-      
+        <h2 className="text-5xl font-bold text-white mb-2">Leading-Edge  <span className="text-purple-500">Project Initiatives</span> </h2>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-10">
           {projects.map((item) => (
             <div
               className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
               key={item.id}
             > <PinContainer
-            title={item.title}
-            href={item.link}
-              >
+              title={item.title}
+              href={item.link}
+            >
                 <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                   <div
                     className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                     style={{ backgroundColor: "#13162D" }}
                   >
-                    
+
                   </div>
                   <img
                     src={item.img}
@@ -73,7 +73,7 @@ const RecentProjects = () => {
                   </div>
                 </div>
               </PinContainer>
-              
+
             </div>
           ))}
         </div>

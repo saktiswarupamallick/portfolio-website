@@ -104,24 +104,26 @@ export const TracingBeam = ({
 
   useEffect(() => {
     if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight);
+      // Reduce the SVG height to confine the light beam within the content area
+      setSvgHeight(contentRef.current.offsetHeight - 200);
     }
   }, []);
-
+  
   const y1 = useSpring(
-    useTransform(scrollYProgress, [0, 0.8], [50, svgHeight]),
+    useTransform(scrollYProgress, [0, 0.8], [50, svgHeight - 50]), // Adjusted
     {
       stiffness: 500,
       damping: 90,
     }
   );
   const y2 = useSpring(
-    useTransform(scrollYProgress, [0, 1], [50, svgHeight - 200]),
+    useTransform(scrollYProgress, [0, 1], [50, svgHeight - 250]), // Adjusted
     {
       stiffness: 500,
       damping: 90,
     }
   );
+  
 
   return (
     <motion.div

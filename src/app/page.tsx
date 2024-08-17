@@ -11,6 +11,7 @@ import Footer from "@/components/ui/Footer";
 import { CompareDemo } from "@/components/ui/compare";
 import { CardSpotlightDemo } from "@/components/ui/card-spotlight";
 import { MacbookScrollDemo } from "@/components/ui/macbook-scroll";
+import { AppleCardsCarouselDemo } from "@/components/ui/apple-cards-carousel";
 
 
 
@@ -24,9 +25,7 @@ export default function Home() {
       < HeroHighlightDemo />
       <CompareDemo />
       < InfiniteMovingLogosDemo />
-      <main className="relative flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-        <div className="max-w-7xl w-full"> < RecentProjects /> </div>
-      </main>
+      <AppleCardsCarouselDemo />
       <Preview />
       <TracingBeamDemo />
       < Footer />

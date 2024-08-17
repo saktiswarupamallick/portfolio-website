@@ -11,31 +11,19 @@ import Link from "next/link";
 export const BackgroundCellAnimation: NextPage = () => {
   return (
     <div className="relative h-[660px] mb-[130px] bg-slate-950 flex justify-center items-center overflow-hidden">
-      <div className="absolute z-[0] w-[80%] h-[60%] -left-[50%] rounded-full pink__gradient top-40" />
+     
       <BackgroundCellCore />
-      <div className="relative z-50 select-none text-center">
-        <motion.h1
-          className="bg-clip-text font-poppins font-bold text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500 text-[1rem] sm:text-[1rem] lg:text-[2rem]"
-          initial={{ opacity: 0, y: 5 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.3,
-            ease: "easeInOut",
-            delay: 0.6,
-          }}
-        >
-          Hi my name is
-        </motion.h1>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-7xl poppins-bold font-bold text-white text-bold">
-          Sakti Swarupa
+      <div className="relative z-50 select-none text-center p-6">
+
+        <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white text-bold">
+          I&apos;m a software engineer
         </h1>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-7xl poppins-bold font-bold bg-clip-text text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
-          I craft things for the web.
+        <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl  font-bold bg-clip-text text-bold text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
+          who crafts innovation from complexity
         </h1>
         <h2 className="mt-4 text-base sm:text-lg md:text-xl lg:text-lg text-white">
-          I&apos;m a software engineer with expertise in creating top-notch
-          digital experiences. <br />My current focus is on developing products that are
-          accessible and centered around user needs
+          Meet Sakti, a tech enthusiast who turns ideas into powerful, user-friendly applications. Fueled by creativity and coffee.
+          <br/>When not building software, you'll find me perfecting the art of balancing innovation with efficiency.
         </h2>
         <div className="mt-4">
           <Link href="https://drive.google.com/file/d/1rta-DhJc7SqCZ6S0NZ99DcIjDWwEg4QN/view?usp=drive_link">
@@ -46,7 +34,7 @@ export const BackgroundCellAnimation: NextPage = () => {
             />
           </Link>
         </div>
-        
+
       </div>
     </div>
   );
@@ -88,7 +76,7 @@ const BackgroundCellCore = () => {
         >
           <Pattern cellClassName="border-cyan-900 relative z-[100]" mousePosition={mousePosition} />
         </div>
-        <Pattern className="opacity-[0.4]" cellClassName="border-cyan-700" mousePosition={mousePosition} />
+        <Pattern className="opacity-[0.4]" cellClassName="border-cyan-900" mousePosition={mousePosition} />
       </div>
     </div>
   );

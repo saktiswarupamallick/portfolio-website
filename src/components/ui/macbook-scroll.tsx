@@ -23,6 +23,9 @@ import { IconWorld } from "@tabler/icons-react";
 import { IconCommand } from "@tabler/icons-react";
 import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
+import { IconBrandGithubFilled } from "@tabler/icons-react";
+import { IconBrandGithub } from "@tabler/icons-react";
+
 import Image from "next/image";
 
 import { FaApple } from "react-icons/fa";
@@ -31,12 +34,12 @@ import Link from "next/link";
 
 export function MacbookScrollDemo() {
     return (
-        <div className="overflow-hidden dark:bg-slate-950 bg-slate-950 mt-[-600px] w-full">
+        <div className="overflow-hidden p-6 dark:bg-slate-950 bg-slate-950 mt-[-600px] w-full">
             <MacbookScroll
 
                 badge={
-                    <Link href="https://peerlist.io/manuarora">
-                        <Badge className="h-10 w-10 transform -rotate-12" />
+                    <Link href="https://github.com/saktiswarupamallick">
+                        <IconBrandGithubFilled  style={{ width: "64px", height: "64px"}} className="text-black" />
                     </Link>
                 }
                 src={`/linear.webp`}
@@ -132,7 +135,7 @@ export const MacbookScroll = ({
     return (
         <div
             ref={ref}
-            className="min-h-[150vh] flex flex-col items-center py-0 md:py-80 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.5] sm:scale-75"
+            className="min-h-[250vh] flex flex-col items-center py-0 md:py-80 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.5] sm:scale-75"
         >
             <motion.h2
                 style={{
@@ -143,7 +146,7 @@ export const MacbookScroll = ({
             >
                 {title || (
                     <span>
-                        This Macbook is built with Tailwindcss. <br /> No kidding.
+                        .
                     </span>
                 )}
             </motion.h2>
@@ -214,7 +217,7 @@ export const Lid = ({
                     className="absolute inset-0 bg-[#010101] rounded-lg flex items-center justify-center"
                 >
                     <span className="text-white">
-                        <FaApple size={48} />
+                        <IconBrandGithub size={48} />
                     </span>
                 </div>
             </div>

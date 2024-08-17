@@ -3,67 +3,69 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { IconDotsVertical, IconCheck , IconRosetteDiscountCheckFilled} from "@tabler/icons-react";
+import { IconDotsVertical, IconCheck, IconRosetteDiscountCheckFilled } from "@tabler/icons-react";
 
 
 export function CompareDemo() {
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-start p-6 space-y-6 lg:space-y-0 lg:space-x-6 px-4 sm:px-6 lg:px-8 xl:px-10">
-    {/* Left Side: My Approach Section */}
-    <div className="w-full lg:w-1/2 p-4 bg-slate-950 dark:bg-neutral-800 rounded-2xl">
-  <h2 className="text-xl lg:text-3xl font-semibold text-white mb-4">My Approach</h2>
-  <ul className="space-y-3 text-sm lg:text-xl text-white">
-    <li className="flex items-start">
-      <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
-      <div>
-        <span className="font-semibold">Requirement Analysis:</span> Gather project needs and define clear objectives.
+    <div>
+      <h2 className="text-5xl font-bold text-white text-center mt-24 mb-20">Crafting Solutions with  <span className="text-purple-500"> Precision</span> </h2><div className="flex flex-col lg:flex-row justify-between items-start p-6 space-y-6 lg:space-y-0 lg:space-x-6 px-4 sm:px-6 lg:px-8 xl:px-10">
+      {/* Left Side: My Approach Section */}
+      <div className="w-full lg:w-1/2 p-4 bg-slate-950 dark:bg-neutral-800 rounded-2xl">
+        <h2 className="text-xl lg:text-4xl font-semibold text-white mb-4">My Approach</h2>
+        <ul className="space-y-3 text-sm lg:text-xl text-white">
+          <li className="flex items-start">
+            <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
+            <div>
+              <span className="font-semibold">Requirement Analysis:</span> Gather project needs and define clear objectives.
+            </div>
+          </li>
+          <li className="flex items-start">
+            <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
+            <div>
+              <span className="font-semibold">Design:</span> Create structured plans for system architecture and UI.
+            </div>
+          </li>
+          <li className="flex items-start">
+            <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
+            <div>
+              <span className="font-semibold">Implementation:</span> Develop and code features based on design specifications.
+            </div>
+          </li>
+          <li className="flex items-start">
+            <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
+            <div>
+              <span className="font-semibold">Testing:</span> Validate code functionality and ensure no bugs.
+            </div>
+          </li>
+          <li className="flex items-start">
+            <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
+            <div>
+              <span className="font-semibold">Deployment:</span> Release application to production environments for users.
+            </div>
+          </li>
+          <li className="flex items-start">
+            <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
+            <div>
+              <span className="font-semibold">Maintenance:</span> Regularly update and optimize the system post-deployment.
+            </div>
+          </li>
+        </ul>
       </div>
-    </li>
-    <li className="flex items-start">
-      <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
-      <div>
-        <span className="font-semibold">Design:</span> Create structured plans for system architecture and UI.
-      </div>
-    </li>
-    <li className="flex items-start">
-      <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
-      <div>
-        <span className="font-semibold">Implementation:</span> Develop and code features based on design specifications.
-      </div>
-    </li>
-    <li className="flex items-start">
-      <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
-      <div>
-        <span className="font-semibold">Testing:</span> Validate code functionality and ensure no bugs.
-      </div>
-    </li>
-    <li className="flex items-start">
-      <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
-      <div>
-        <span className="font-semibold">Deployment:</span> Release application to production environments for users.
-      </div>
-    </li>
-    <li className="flex items-start">
-      <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
-      <div>
-        <span className="font-semibold">Maintenance:</span> Regularly update and optimize the system post-deployment.
-      </div>
-    </li>
-  </ul>
-</div>
 
-    {/* Right Side: Compare Component */}
-    <div className="w-full lg:w-1/2 p-4 border rounded-3xl dark:bg-neutral-900 bg-slate-950 border-neutral-200 dark:border-neutral-800">
-      <Compare
-        firstImage="https://assets.aceternity.com/code-problem.png"
-        secondImage="https://assets.aceternity.com/code-solution.png"
-        firstImageClassName="object-cover object-left-top"
-        secondImageClassname="object-cover object-left-top"
-        className="h-[200px] md:h-[300px] lg:h-[400px] xl:h-[500px] w-full"
-        slideMode="hover"
-      />
-    </div>
-  </div>
+      {/* Right Side: Compare Component */}
+      <div className="w-full lg:w-1/2 p-4 border rounded-3xl dark:bg-neutral-900 bg-slate-950 border-neutral-200 dark:border-neutral-800">
+        <Compare
+          firstImage="https://assets.aceternity.com/code-problem.png"
+          secondImage="https://assets.aceternity.com/code-solution.png"
+          firstImageClassName="object-cover object-left-top"
+          secondImageClassname="object-cover object-left-top"
+          className="h-[200px] md:h-[300px] lg:h-[400px] xl:h-[500px] w-full"
+          slideMode="hover"
+        />
+      </div>
+    </div></div>
+    
   );
 }
 
