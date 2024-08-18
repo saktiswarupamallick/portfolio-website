@@ -23,7 +23,7 @@ export const BackgroundCellAnimation: NextPage = () => {
         </h1>
         <h2 className="mt-4 text-base sm:text-lg md:text-xl lg:text-lg text-white">
           Meet Sakti, a tech enthusiast who turns ideas into powerful, user-friendly applications. Fueled by creativity and coffee.
-          <br/>When not building software, you'll find me perfecting the art of balancing innovation with efficiency.
+          <br/>When not building software, you&apos;ll find me perfecting the art of balancing innovation with efficiency.
         </h2>
         <div className="mt-4">
           <Link href="https://drive.google.com/file/d/1rta-DhJc7SqCZ6S0NZ99DcIjDWwEg4QN/view?usp=drive_link">
