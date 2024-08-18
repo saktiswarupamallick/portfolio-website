@@ -5,67 +5,84 @@ import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { IconDotsVertical, IconCheck, IconRosetteDiscountCheckFilled } from "@tabler/icons-react";
 
+interface TimelineItemProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const TimelineItem = ({ icon, title, description }: TimelineItemProps) => (
+  <div className="relative flex items-start space-x-4">
+    <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center">
+      {icon}
+    </div>
+    <div className="flex-1">
+      <h3 className="text-xl font-semibold text-white">{title}</h3>
+      <p className="text-lg text-gray-300">{description}</p>
+    </div>
+  </div>
+);
+
 
 export function CompareDemo() {
   return (
     <div>
-      <h2 className="text-5xl font-bold text-white text-center mt-24 mb-20">Crafting Solutions with  <span className="text-purple-500"> Precision</span> </h2><div className="flex flex-col lg:flex-row justify-between items-start p-6 space-y-6 lg:space-y-0 lg:space-x-6 px-4 sm:px-6 lg:px-8 xl:px-10">
-      {/* Left Side: My Approach Section */}
-      <div className="w-full lg:w-1/2 p-4 bg-slate-950 dark:bg-neutral-800 rounded-2xl">
-        <h2 className="text-xl lg:text-4xl font-semibold text-white mb-4">My Approach</h2>
-        <ul className="space-y-3 text-sm lg:text-xl text-white">
-          <li className="flex items-start">
-            <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
-            <div>
-              <span className="font-semibold">Requirement Analysis:</span> Gather project needs and define clear objectives.
+      <h2 className="text-5xl font-bold text-white text-center mt-24 mb-20">Crafting Solutions with  <span className="text-purple-500"> Precision</span> </h2>
+      <div className="flex flex-col lg:flex-row justify-between items-start p-6 space-y-6 lg:space-y-0 lg:space-x-6 px-4 sm:px-6 lg:px-8 xl:px-10">
+        {/* Left Side: My Approach Section */}
+        <div className="w-full lg:w-1/2 p-4 bg-slate-950 dark:bg-neutral-800 rounded-2xl">
+          <h2 className="text-xl lg:text-4xl font-semibold text-white mb-4">My Approach</h2>
+          <div className="relative border-l border-gray-500">
+            <div className="absolute top-0 -left-3 w-3 h-3 bg-purple-500 rounded-full"></div>
+            <div className="flex flex-col space-y-8">
+              <TimelineItem
+                icon={<IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />}
+                title="Requirement Analysis"
+                description="Gather project needs and define clear objectives."
+              />
+              <TimelineItem
+                icon={<IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />}
+                title="Design"
+                description="Create structured plans for system architecture and UI."
+              />
+              <TimelineItem
+                icon={<IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />}
+                title="Implementation"
+                description="Develop and code features based on design specifications."
+              />
+              <TimelineItem
+                icon={<IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />}
+                title="Testing"
+                description="Validate code functionality and ensure no bugs."
+              />
+              <TimelineItem
+                icon={<IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />}
+                title="Deployment"
+                description="Release application to production environments for users."
+              />
+              <TimelineItem
+                icon={<IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />}
+                title="Maintenance"
+                description="Regularly update and optimize the system post-deployment."
+              />
             </div>
-          </li>
-          <li className="flex items-start">
-            <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
-            <div>
-              <span className="font-semibold">Design:</span> Create structured plans for system architecture and UI.
-            </div>
-          </li>
-          <li className="flex items-start">
-            <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
-            <div>
-              <span className="font-semibold">Implementation:</span> Develop and code features based on design specifications.
-            </div>
-          </li>
-          <li className="flex items-start">
-            <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
-            <div>
-              <span className="font-semibold">Testing:</span> Validate code functionality and ensure no bugs.
-            </div>
-          </li>
-          <li className="flex items-start">
-            <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
-            <div>
-              <span className="font-semibold">Deployment:</span> Release application to production environments for users.
-            </div>
-          </li>
-          <li className="flex items-start">
-            <IconRosetteDiscountCheckFilled className="text-white mr-2 mt-1" />
-            <div>
-              <span className="font-semibold">Maintenance:</span> Regularly update and optimize the system post-deployment.
-            </div>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </div>
 
-      {/* Right Side: Compare Component */}
-      <div className="w-full lg:w-1/2 p-4 border rounded-3xl dark:bg-neutral-900 bg-slate-950 border-neutral-200 dark:border-neutral-800">
-        <Compare
-          firstImage="https://assets.aceternity.com/code-problem.png"
-          secondImage="https://assets.aceternity.com/code-solution.png"
-          firstImageClassName="object-cover object-left-top"
-          secondImageClassname="object-cover object-left-top"
-          className="h-[200px] md:h-[300px] lg:h-[400px] xl:h-[500px] w-full"
-          slideMode="hover"
-        />
-      </div>
-    </div></div>
-    
+
+        {/* Right Side: Compare Component */}
+        <div className="w-full pt-10 lg:w-1/2 p-4 border rounded-3xl dark:bg-neutral-900 bg-slate-950 border-neutral-800">
+          <Compare
+            firstImage="https://assets.aceternity.com/code-problem.png"
+            secondImage="https://assets.aceternity.com/code-solution.png"
+            firstImageClassName="object-cover object-left-top"
+            secondImageClassname="object-cover object-left-top"
+            className="h-[200px] md:h-[300px] lg:h-[400px] xl:h-[500px] w-full"
+            slideMode="hover"
+          />
+        </div>
+      </div></div>
+
   );
 }
 

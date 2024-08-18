@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <main className="bg-slate-950">
       < Navbar />
-      < BackgroundCellAnimation />
+      
       <MacbookScrollDemo />
       < HeroHighlightDemo />
       <CompareDemo />

@@ -2,6 +2,11 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { MouseParallax } from "react-just-parallax";
+import { FaLocationArrow } from "react-icons/fa6";
+import MagicButton from "./MagicButton";
+import Link from "next/link";
+
 import {
     IconBrightnessDown,
     IconBrightnessUp,
@@ -28,68 +33,100 @@ import { IconBrandGithub } from "@tabler/icons-react";
 
 import Image from "next/image";
 
-import { FaApple } from "react-icons/fa";
 
-import Link from "next/link";
+interface BackgroundCirclesProps {
+    parallaxRef: React.RefObject<HTMLDivElement>;
+}
+
+export const BackgroundCircles: React.FC<BackgroundCirclesProps> = ({ parallaxRef }) => {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    return (
+        <div className="absolute -top-[300px] left-1/2 w-[78rem] aspect-square  rounded-full -translate-x-1/2 md:-top-[38.5rem] xl:-top-[32rem]">
+
+
+            {/* Moving background colored circle balls */}
+            <MouseParallax strength={0.07} parallaxContainerRef={parallaxRef}>
+                <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom rotate-[46deg]">
+                    <div
+                        className={`w-2 h-2 -ml-1 -mt-36 bg-gradient-to-b from-[#DD734F] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                            }`}
+                    />
+                </div>
+
+                <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom -rotate-[56deg]">
+                    <div
+                        className={`w-4 h-4 -ml-1 -mt-32 bg-gradient-to-b from-[#DD734F] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                            }`}
+                    />
+                </div>
+
+                <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom rotate-[54deg]">
+                    <div
+                        className={`hidden w-4 h-4 -ml-1 mt-[12.9rem] bg-gradient-to-b from-[#B9AEDF] to-[#1A1A32] rounded-full xl:block transit transition-transform duration-500 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                            }`}
+                    />
+                </div>
+
+                <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom -rotate-[65deg]">
+                    <div
+                        className={`w-3 h-3 -ml-1.5 mt-52 bg-gradient-to-b from-[#B9AEDF] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                            }`}
+                    />
+                </div>
+
+                <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom -rotate-[85deg]">
+                    <div
+                        className={`w-6 h-6 -ml-3 -mt-3 bg-gradient-to-b from-[#88E5BE] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                            }`}
+                    />
+                </div>
+
+                <div className="absolute bottom-1/2 left-1/2 w-0.25 h-1/2 origin-bottom rotate-[70deg]">
+                    <div
+                        className={`w-6 h-6 -ml-3 -mt-3 bg-gradient-to-b from-[#88E5BE] to-[#1A1A32] rounded-full transition-transform duration-500 ease-out ${mounted ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                            }`}
+                    />
+                </div>
+            </MouseParallax>
+        </div>
+    );
+};
+
 
 export function MacbookScrollDemo() {
+    const parallaxRef = useRef(null);
+
     return (
-        <div className="overflow-hidden p-6 dark:bg-slate-950 bg-slate-950 mt-[-600px] w-full">
+        <div className="overflow-hidden p-6 dark:bg-slate-950 bg-slate-950 mt-[-200px] w-full">
+            <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24 bg-slate-950 ">
+
+                <BackgroundCircles parallaxRef={parallaxRef} />
+            </div>
+
             <MacbookScroll
+
 
                 badge={
                     <Link href="https://github.com/saktiswarupamallick">
-                        <IconBrandGithubFilled  style={{ width: "64px", height: "64px"}} className="text-black" />
+                        <IconBrandGithubFilled style={{ width: "64px", height: "64px" }} className="text-black" />
                     </Link>
                 }
                 src={`/linear.webp`}
                 showGradient={false}
             />
+            <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24 bg-slate-950 ">
+
+                <BackgroundCircles parallaxRef={parallaxRef} />
+            </div>
         </div>
     );
 }
-// Peerlist logo
-const Badge = ({ className }: { className?: string }) => {
-    return (
-        <svg
-            width="24"
-            height="24"
-            viewBox="0 0 56 56"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className={className}
-        >
-            <path
-                d="M56 28C56 43.464 43.464 56 28 56C12.536 56 0 43.464 0 28C0 12.536 12.536 0 28 0C43.464 0 56 12.536 56 28Z"
-                fill="#00AA45"
-            ></path>
-            <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M28 54C42.3594 54 54 42.3594 54 28C54 13.6406 42.3594 2 28 2C13.6406 2 2 13.6406 2 28C2 42.3594 13.6406 54 28 54ZM28 56C43.464 56 56 43.464 56 28C56 12.536 43.464 0 28 0C12.536 0 0 12.536 0 28C0 43.464 12.536 56 28 56Z"
-                fill="#219653"
-            ></path>
-            <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M27.0769 12H15V46H24.3846V38.8889H27.0769C34.7305 38.8889 41 32.9048 41 25.4444C41 17.984 34.7305 12 27.0769 12ZM24.3846 29.7778V21.1111H27.0769C29.6194 21.1111 31.6154 23.0864 31.6154 25.4444C31.6154 27.8024 29.6194 29.7778 27.0769 29.7778H24.3846Z"
-                fill="#24292E"
-            ></path>
-            <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M18 11H29.0769C36.2141 11 42 16.5716 42 23.4444C42 30.3173 36.2141 35.8889 29.0769 35.8889H25.3846V43H18V11ZM25.3846 28.7778H29.0769C32.1357 28.7778 34.6154 26.39 34.6154 23.4444C34.6154 20.4989 32.1357 18.1111 29.0769 18.1111H25.3846V28.7778Z"
-                fill="white"
-            ></path>
-            <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M17 10H29.0769C36.7305 10 43 15.984 43 23.4444C43 30.9048 36.7305 36.8889 29.0769 36.8889H26.3846V44H17V10ZM19 12V42H24.3846V34.8889H29.0769C35.6978 34.8889 41 29.7298 41 23.4444C41 17.1591 35.6978 12 29.0769 12H19ZM24.3846 17.1111H29.0769C32.6521 17.1111 35.6154 19.9114 35.6154 23.4444C35.6154 26.9775 32.6521 29.7778 29.0769 29.7778H24.3846V17.1111ZM26.3846 19.1111V27.7778H29.0769C31.6194 27.7778 33.6154 25.8024 33.6154 23.4444C33.6154 21.0864 31.6194 19.1111 29.0769 19.1111H26.3846Z"
-                fill="#24292E"
-            ></path>
-        </svg>
-    );
-};
+
 
 
 export const MacbookScroll = ({
@@ -108,6 +145,7 @@ export const MacbookScroll = ({
         target: ref,
         offset: ["start start", "end start"],
     });
+    const parallaxRef = useRef(null);
 
     const [isMobile, setIsMobile] = useState(false);
 
@@ -135,21 +173,35 @@ export const MacbookScroll = ({
     return (
         <div
             ref={ref}
-            className="min-h-[250vh] flex flex-col items-center py-0 md:py-80 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.5] sm:scale-75"
+            className="min-h-[200vh] flex flex-col items-center py-0 md:py-80 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100 scale-[0.5] sm:scale-75"
         >
+            <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24 bg-slate-950 ">
+
+                <BackgroundCircles parallaxRef={parallaxRef} />
+            </div>
             <motion.h2
                 style={{
                     translateY: textTransform,
                     opacity: textOpacity,
                 }}
-                className="dark:text-white text-neutral-800 text-3xl font-bold mb-20 text-center"
+                className="dark:text-white text-white text-3xl mt-[-100px] font-bold mb-10 text-center"
             >
                 {title || (
-                    <span>
-                        .
+                    <span className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white text-bold">
+                        I’ve got 99 problems, but a glitch ain’t one.
                     </span>
                 )}
             </motion.h2>
+            <div className="relative z-50 select-none text-center ">
+                <div className=" mb-20">
+                    <Link href="https://drive.google.com/file/d/1rta-DhJc7SqCZ6S0NZ99DcIjDWwEg4QN/view?usp=drive_link">
+                        <MagicButton
+                            title="My Resume"
+                            icon={<FaLocationArrow />}
+                            position="right"
+                        />
+                    </Link>
+                </div></div>
             {/* Lid */}
             <Lid
                 src={src}
@@ -181,6 +233,10 @@ export const MacbookScroll = ({
                     <div className="h-40 w-full absolute bottom-0 inset-x-0 bg-gradient-to-t dark:from-black from-white via-white dark:via-black to-transparent z-50"></div>
                 )}
                 {badge && <div className="absolute bottom-4 left-4">{badge}</div>}
+            </div>
+            <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24 bg-slate-950 ">
+
+                <BackgroundCircles parallaxRef={parallaxRef} />
             </div>
         </div>
     );

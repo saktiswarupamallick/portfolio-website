@@ -396,22 +396,22 @@ export function GlobeDemo() {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center h-screen md:h-auto bg-slate-950 relative w-full">
-    <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="w-full text-center"
-      >
-        <p className="text-base sm:text-lg md:text-xl font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
-        Discover projects I&apos;ve developed, international collaborations, and my commitment to excellence in the tech industry.
-        </p>
-      </motion.div>
-      <div className="absolute w-full bottom-0 inset-x-0 h-40  from-transparent to-black to-white pointer-events-none select-none z-40" />
-      <div className="absolute w-full h-72 md:h-full z-10">
-        <World data={sampleArcs} globeConfig={globeConfig} />
+      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="w-full text-center"
+        >
+          <p className="text-base sm:text-lg md:text-xl font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
+            Discover projects I&apos;ve developed, international collaborations, and my commitment to excellence in the tech industry.
+          </p>
+        </motion.div>
+        <div className="absolute w-full bottom-0 inset-x-0 h-40  from-transparent to-black to-white pointer-events-none select-none z-40" />
+        <div className="absolute pb-20 w-full h-72 md:h-full z-10">
+          <World data={sampleArcs} globeConfig={globeConfig} />
+        </div>
       </div>
     </div>
-  </div>
   );
 }
