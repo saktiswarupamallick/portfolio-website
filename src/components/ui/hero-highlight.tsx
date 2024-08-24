@@ -30,50 +30,51 @@ export function HeroHighlightDemo() {
     };
   }, []);
 
-  return (<div id="about"><HeroHighlight className="pb-24 w-full bg-slate-950" >
-      <div className="absolute z-[20] w-[70%] h-[60%] -left-[50%] rounded-full pink__gradient top-40" />
-      <motion.div
-        ref={sectionRef}
-        initial={{
-          opacity: 0,
-          y: 20,
-        }}
-        animate={isInView ? { opacity: 1, y: [20, -5, 0] } : {}}
-        transition={{
-          duration: 0.5,
-          ease: [0.4, 0.0, 0.2, 1],
-        }}
-        className="flex flex-col items-center justify-center text-center px-4 md:px-8 lg:px-16 w-full"
-      >
-        <div className="md:w-2/3">
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={isInView ? { opacity: 1, y: [20, -5, 0] } : {}}
-            transition={{
-              duration: 0.5,
-              ease: [0.4, 0.0, 0.2, 1],
-            }}
-            className="flex items-center mb-12 space-x-4"
-          >
-           
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white dark:text-white leading-relaxed lg:leading-snug">
-              Why Choose Me?
-            </h1>
-            <hr className="flex-grow border-t-2 border-white" />
-          </motion.div>
-          <p className="mt-4 text-lg md:text-xl lg:text-2xl text-white">
-            With over 3 years of professional experience as a <Highlight>Software Development Engineer</Highlight>, I have played a pivotal role in my career journey, developing applications utilizing the <Highlight>MERN stack</Highlight> and overseeing the <Highlight>technical team</Highlight>. My leadership involves managing and executing projects, including creating <Highlight>Inventory Management Systems</Highlight> and <Highlight>productivity software</Highlight>. Collaborating with <Highlight>international clients</Highlight> has showcased my ability to navigate diverse and challenging projects while maintaining a commitment to <Highlight>excellence</Highlight> in technology. I have gained valuable <Highlight>insights and skills</Highlight>, adapting to various challenges and leading successful project executions.
-          </p>
-        </div>
-        <div className="md:w-2/3 mt-8 md:mt-8 flex justify-center">
-          <GlobeDemo />
-        </div>
-      </motion.div>
-    </HeroHighlight></div>
-    
+  return (
+    <div id="about">
+      <HeroHighlight className="pb-24 w-full bg-slate-950">
+        <div className="absolute z-[20] w-[70%] h-[60%] -left-[50%] rounded-full pink__gradient top-40" />
+        <motion.div
+          ref={sectionRef}
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={isInView ? { opacity: 1, y: [20, -5, 0] } : {}}
+          transition={{
+            duration: 0.5,
+            ease: [0.4, 0.0, 0.2, 1],
+          }}
+          className="flex flex-col items-center justify-center text-center px-4 md:px-8 lg:px-16 w-full"
+        >
+          <div className="md:w-2/3">
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={isInView ? { opacity: 1, y: [20, -5, 0] } : {}}
+              transition={{
+                duration: 0.5,
+                ease: [0.4, 0.0, 0.2, 1],
+              }}
+              className="flex items-center mb-12 space-x-4"
+            >
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white dark:text-white leading-relaxed lg:leading-snug">
+                About Me
+              </h1>
+              <hr className="flex-grow border-t-2 border-white" />
+            </motion.div>
+            <p className="mt-4 text-lg md:text-xl lg:text-2xl text-white">
+              With over 3 years of professional experience as a <Highlight>Software Development Engineer</Highlight>, I, <Highlight>Sakti Swarupa Mallick</Highlight>, have played a pivotal role in my career journey, developing applications utilizing the <Highlight>MERN stack</Highlight> and overseeing the <Highlight>technical team</Highlight>. My leadership involves managing and executing projects, including creating <Highlight>Inventory Management Systems</Highlight> and <Highlight>productivity software</Highlight>. Collaborating with <Highlight>international clients</Highlight> has showcased my ability to navigate diverse and challenging projects while maintaining a commitment to <Highlight>excellence</Highlight> in technology. I have gained valuable <Highlight>insights and skills</Highlight>, adapting to various challenges and leading successful project executions.
+            </p>
+          </div>
+          <div className="md:w-2/3 mt-8 md:mt-8 flex justify-center">
+            <GlobeDemo />
+          </div>
+        </motion.div>
+      </HeroHighlight>
+    </div>
   );
 }
 
